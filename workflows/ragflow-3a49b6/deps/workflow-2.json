@@ -1,0 +1,320 @@
+{
+  "id": "workflow-2",
+  "name": "注册",
+  "drawflow": {
+    "nodes": [
+      {
+        "data": {
+          "activeInInput": false,
+          "blockId": "trigger",
+          "contextMenuName": "",
+          "contextTypes": [],
+          "date": "",
+          "days": [],
+          "delay": 5,
+          "description": "",
+          "disableBlock": false,
+          "interval": 60,
+          "isUrlRegex": false,
+          "observeElement": {
+            "baseElOptions": {
+              "attributeFilter": [],
+              "attributes": false,
+              "characterData": false,
+              "childList": true,
+              "subtree": false
+            },
+            "baseSelector": "",
+            "matchPattern": "",
+            "selector": "",
+            "targetOptions": {
+              "attributeFilter": [],
+              "attributes": false,
+              "characterData": false,
+              "childList": true,
+              "subtree": false
+            }
+          },
+          "parameters": [],
+          "preferParamsInTab": false,
+          "shortcut": "",
+          "time": "00:00",
+          "type": "manual",
+          "url": ""
+        },
+        "id": "mtguqvu7-1yarmk37",
+        "label": "Trigger",
+        "position": {
+          "x": 0,
+          "y": -107.5
+        }
+      },
+      {
+        "data": {
+          "blockId": "event-click",
+          "button": 0,
+          "description": "注册",
+          "disableBlock": false,
+          "findBy": "cssSelector",
+          "markEl": false,
+          "multiple": false,
+          "selector": "div.absolute.inset-0:nth-of-type(1) > div.flex.flex-col > div.w-full.max-w-\\[540px\\]:nth-of-type(2) > div.mt-10.text-right > p.text-text-disabled.text-sm > button.inline-flex.items-center",
+          "waitForSelector": true,
+          "waitSelectorTimeout": 5000
+        },
+        "id": "mtguq2na-kp7jh5rb",
+        "label": "Click element",
+        "position": {
+          "x": 540,
+          "y": -108.5
+        }
+      },
+      {
+        "data": {
+          "assignVariable": false,
+          "blockId": "forms",
+          "clearValue": true,
+          "dataColumn": "",
+          "delay": 100,
+          "description": "Text field (email)",
+          "disableBlock": false,
+          "events": [],
+          "findBy": "cssSelector",
+          "getValue": false,
+          "markEl": false,
+          "multiple": false,
+          "optionPosition": "1",
+          "saveData": false,
+          "selectOptionBy": "value",
+          "selected": true,
+          "selector": ".absolute.inset-0[data-testid=\"auth-card-active\"] > .flex.flex-col > .w-full.max-w-\\[540px\\] > .flex.flex-col[data-testid=\"auth-form\"] > .space-y-2 > .peer\\/input.flex[data-testid=\"auth-email\"]",
+          "type": "text-field",
+          "value": "{{ragflow-email}}",
+          "variableName": "",
+          "waitForSelector": true,
+          "waitSelectorTimeout": 5000
+        },
+        "id": "mtguq7l0-wdgwl3k0",
+        "label": "Forms",
+        "position": {
+          "x": 810,
+          "y": -108.5
+        }
+      },
+      {
+        "data": {
+          "__workflowAi": {
+            "goalContract": {
+              "goal": "Text field (nickname)",
+              "successCriteria": [
+                {
+                  "expected": "",
+                  "kind": "elementText",
+                  "match": "contains",
+                  "target": {
+                    "accessibleName": ""
+                  }
+                }
+              ],
+              "version": 1
+            }
+          },
+          "assignVariable": false,
+          "blockId": "forms",
+          "clearValue": true,
+          "dataColumn": "",
+          "delay": 100,
+          "description": "Text field (nickname)",
+          "disableBlock": false,
+          "events": [],
+          "findBy": "cssSelector",
+          "getValue": false,
+          "markEl": false,
+          "multiple": false,
+          "optionPosition": "1",
+          "saveData": false,
+          "selectOptionBy": "value",
+          "selected": true,
+          "selector": "div.absolute.inset-0[data-testid=\"auth-card-active\"] > div.flex.flex-col > div.w-full.max-w-\\[540px\\] > form.flex.flex-col[data-testid=\"auth-form\"] > div.space-y-2 > input.peer\\/input.flex[data-testid=\"auth-nickname\"]",
+          "type": "text-field",
+          "value": "{{ragflow-useName}}",
+          "variableName": "",
+          "waitForSelector": true,
+          "waitSelectorTimeout": 5000
+        },
+        "id": "mtguqfhy-xkrlpdn8",
+        "label": "Forms",
+        "position": {
+          "x": 0,
+          "y": 34.5
+        }
+      },
+      {
+        "data": {
+          "blockId": "event-click",
+          "button": 0,
+          "description": "继续",
+          "disableBlock": false,
+          "findBy": "cssSelector",
+          "markEl": false,
+          "multiple": false,
+          "selector": "div.absolute.inset-0:nth-of-type(2) > div.flex.flex-col > div.w-full.max-w-\\[540px\\]:nth-of-type(2) > form.flex.flex-col > button.inline-flex.items-center",
+          "waitForSelector": true,
+          "waitSelectorTimeout": 5000
+        },
+        "id": "mtguqpns-akik8cu7",
+        "label": "Click element",
+        "position": {
+          "x": 543,
+          "y": 45
+        }
+      },
+      {
+        "data": {
+          "blockId": "event-click",
+          "button": 0,
+          "description": "登录",
+          "disableBlock": false,
+          "findBy": "cssSelector",
+          "markEl": false,
+          "multiple": false,
+          "selector": "div.absolute.inset-0:nth-of-type(2) > div.flex.flex-col > div.w-full.max-w-\\[540px\\]:nth-of-type(2) > form.flex.flex-col > button.inline-flex.items-center",
+          "waitForSelector": true,
+          "waitSelectorTimeout": 5000
+        },
+        "id": "mtguqryg-r73tpjph",
+        "label": "Click element",
+        "position": {
+          "x": 813,
+          "y": 45
+        }
+      },
+      {
+        "data": {
+          "assignVariable": false,
+          "blockId": "forms",
+          "clearValue": true,
+          "dataColumn": "",
+          "delay": 100,
+          "description": "Text field (密码)",
+          "disableBlock": false,
+          "events": [],
+          "findBy": "cssSelector",
+          "getValue": false,
+          "markEl": false,
+          "multiple": false,
+          "optionPosition": "1",
+          "saveData": false,
+          "selectOptionBy": "value",
+          "selected": true,
+          "selector": "body > div:nth-child(2) > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) > input:nth-child(1)",
+          "type": "text-field",
+          "value": "{{ragflow-password}}",
+          "variableName": "",
+          "waitForSelector": true,
+          "waitSelectorTimeout": 5000
+        },
+        "id": "mvaehf95-gi6wcyjr",
+        "label": "Forms",
+        "position": {
+          "x": 273,
+          "y": 45
+        }
+      },
+      {
+        "data": {
+          "blockId": "get-secret",
+          "credential": "mv9fzyw7-ijf7joxd::url",
+          "credentials": [
+            {
+              "credential": "mv9fzyw7-ijf7joxd::url",
+              "variableName": "ragflow_url"
+            },
+            {
+              "credential": "mv9fzyw7-ijf7joxd::email",
+              "variableName": "ragflow-email"
+            },
+            {
+              "credential": "mv9fzyw7-ijf7joxd::password",
+              "variableName": "ragflow-password"
+            },
+            {
+              "credential": "mv9fzyw7-ijf7joxd::username",
+              "variableName": "ragflow-useName"
+            }
+          ],
+          "description": "",
+          "disableBlock": false,
+          "variableName": "ragflow_url"
+        },
+        "id": "mvasy7l2-1kyg4jfg",
+        "label": "Get secret",
+        "position": {
+          "x": 270,
+          "y": -107.5
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "mtguqvu7-u1bdktyh",
+        "source": "mtguqpns-akik8cu7",
+        "sourceHandle": "event-click-output-1",
+        "target": "mtguqryg-r73tpjph",
+        "targetHandle": "event-click-input-1"
+      },
+      {
+        "id": "mvaehn15-vbw619t3",
+        "source": "mvaehf95-gi6wcyjr",
+        "sourceHandle": "forms-output-1",
+        "target": "mtguqpns-akik8cu7",
+        "targetHandle": "event-click-input-1"
+      },
+      {
+        "id": "mvaqws7i-sg27dm06",
+        "source": "mtguqvu7-1yarmk37",
+        "sourceHandle": "trigger-output-1",
+        "target": "mvasy7l2-1kyg4jfg",
+        "targetHandle": "get-secret-input-1"
+      },
+      {
+        "id": "mvgaaxra-2ux08z6f",
+        "source": "mtguq2na-kp7jh5rb",
+        "sourceHandle": "event-click-output-1",
+        "target": "mtguq7l0-wdgwl3k0",
+        "targetHandle": "forms-input-1"
+      },
+      {
+        "id": "mvgabage-tt45cu63",
+        "source": "mtguq7l0-wdgwl3k0",
+        "sourceHandle": "forms-output-1",
+        "target": "mtguqfhy-xkrlpdn8",
+        "targetHandle": "forms-input-1"
+      },
+      {
+        "id": "mvgabvxa-b4ulazxi",
+        "source": "mtguqfhy-xkrlpdn8",
+        "sourceHandle": "forms-output-1",
+        "target": "mvaehf95-gi6wcyjr",
+        "targetHandle": "forms-input-1"
+      },
+      {
+        "id": "mvj33awx-gdb7qdth",
+        "source": "mvasy7l2-1kyg4jfg",
+        "sourceHandle": "get-secret-output-1",
+        "target": "mtguq2na-kp7jh5rb",
+        "targetHandle": "event-click-input-1"
+      }
+    ]
+  },
+  "trigger": {
+    "type": "manual",
+    "enabled": false
+  },
+  "settings": {
+    "saveLog": false,
+    "debugMode": false,
+    "notification": false,
+    "reuseLastState": false
+  }
+}
