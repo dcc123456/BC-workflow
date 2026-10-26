@@ -1,0 +1,547 @@
+{
+  "id": "wf-d11894",
+  "name": "邮件发送",
+  "drawflow": {
+    "nodes": [
+      {
+        "id": "mvj5gpm7-2xwo3jy4",
+        "label": "Trigger",
+        "position": {
+          "x": 0,
+          "y": -311.5
+        },
+        "data": {
+          "activeInInput": false,
+          "contextMenuName": "",
+          "contextTypes": [],
+          "date": "",
+          "days": [],
+          "delay": 5,
+          "description": "",
+          "disableBlock": false,
+          "interval": 60,
+          "isUrlRegex": false,
+          "observeElement": {
+            "baseElOptions": {
+              "attributeFilter": [],
+              "attributes": false,
+              "characterData": false,
+              "childList": true,
+              "subtree": false
+            },
+            "baseSelector": "",
+            "matchPattern": "",
+            "selector": "",
+            "targetOptions": {
+              "attributeFilter": [],
+              "attributes": false,
+              "characterData": false,
+              "childList": true,
+              "subtree": false
+            }
+          },
+          "parameters": [],
+          "preferParamsInTab": false,
+          "shortcut": "",
+          "time": "00:00",
+          "type": "manual",
+          "url": "",
+          "blockId": "trigger"
+        }
+      },
+      {
+        "id": "mvj5gxku-gkxep64d",
+        "label": "Parse Excel",
+        "position": {
+          "x": 540,
+          "y": -311.5
+        },
+        "data": {
+          "description": "",
+          "disableBlock": false,
+          "filePath": "邮箱.xlsx",
+          "fileVariable": "",
+          "hasHeader": true,
+          "rawVariableName": "lastExcelRawRows",
+          "sheetName": "",
+          "sourceMode": "file-path",
+          "variableName": "lastExcelRows",
+          "blockId": "parse-excel"
+        }
+      },
+      {
+        "id": "mvlt3i9s-ljr0sw0z",
+        "label": "New tab",
+        "position": {
+          "x": 270,
+          "y": -312
+        },
+        "data": {
+          "active": true,
+          "customUserAgent": false,
+          "description": "打开邮箱首页",
+          "disableBlock": false,
+          "inGroup": false,
+          "tabZoom": 1,
+          "updatePrevTab": false,
+          "url": "https://wx.mail.qq.com/home/index?sid=zZoxeYxSb2ouG3IyAEpXVwAA#/list/1",
+          "userAgent": "",
+          "waitTabLoaded": true,
+          "blockId": "new-tab"
+        }
+      },
+      {
+        "id": "mvlt9crd-aygci2v8",
+        "label": "Loop data",
+        "position": {
+          "x": 810,
+          "y": -311.5
+        },
+        "data": {
+          "description": "",
+          "disableBlock": false,
+          "elementSelector": "",
+          "fromNumber": 1,
+          "loopData": "[]",
+          "loopId": "3y7trw1cyj",
+          "loopThrough": "variable",
+          "maxLoop": 0,
+          "referenceKey": "",
+          "resumeLastWorkflow": false,
+          "reverseLoop": false,
+          "startIndex": 1,
+          "toNumber": 10,
+          "variableName": "lastExcelRawRows",
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000,
+          "blockId": "loop-data"
+        }
+      },
+      {
+        "id": "mvltakxj-oxm2zu3w",
+        "label": "Click element",
+        "position": {
+          "x": 0,
+          "y": -169
+        },
+        "data": {
+          "description": "点击写信按钮",
+          "disableBlock": false,
+          "findBy": "cssSelector",
+          "markEl": false,
+          "multiple": false,
+          "selector": "div.frame-sidebar-compose-btn",
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000,
+          "blockId": "event-click"
+        }
+      },
+      {
+        "id": "mvltbpn8-88fmlm1w",
+        "label": "Forms",
+        "position": {
+          "x": 540,
+          "y": -169
+        },
+        "data": {
+          "assignVariable": false,
+          "clearValue": true,
+          "dataColumn": "",
+          "delay": 0,
+          "description": "",
+          "disableBlock": false,
+          "events": [],
+          "findBy": "cssSelector",
+          "getValue": false,
+          "markEl": false,
+          "multiple": false,
+          "optionPosition": "1",
+          "saveData": false,
+          "selectOptionBy": "value",
+          "selected": true,
+          "selector": "input.cmp-account-input",
+          "type": "text-field",
+          "value": "{{loopItem[0]}}",
+          "variableName": "",
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000,
+          "blockId": "forms"
+        }
+      },
+      {
+        "id": "mvltr2zk-o7rhacqd",
+        "label": "Click element",
+        "position": {
+          "x": 270,
+          "y": -169
+        },
+        "data": {
+          "description": "点击触发收信人输入",
+          "disableBlock": false,
+          "findBy": "cssSelector",
+          "markEl": false,
+          "multiple": false,
+          "selector": "div.xmail-cmp-accounts-editor.receiver-editor",
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000,
+          "blockId": "event-click"
+        }
+      },
+      {
+        "id": "mvlv5qjf-k200jy2n",
+        "label": "Click element",
+        "position": {
+          "x": 0,
+          "y": -26
+        },
+        "data": {
+          "description": "点击触发主题输入",
+          "disableBlock": false,
+          "findBy": "cssSelector",
+          "markEl": false,
+          "multiple": false,
+          "selector": "input.subject-input",
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000,
+          "blockId": "event-click"
+        }
+      },
+      {
+        "id": "mvlv6ez9-mba3kfnb",
+        "label": "Forms",
+        "position": {
+          "x": 270,
+          "y": -26
+        },
+        "data": {
+          "assignVariable": false,
+          "clearValue": true,
+          "dataColumn": "",
+          "delay": 0,
+          "description": "",
+          "disableBlock": false,
+          "events": [],
+          "findBy": "cssSelector",
+          "getValue": false,
+          "markEl": false,
+          "multiple": false,
+          "optionPosition": "1",
+          "saveData": false,
+          "selectOptionBy": "value",
+          "selected": true,
+          "selector": "input.subject-input",
+          "type": "text-field",
+          "value": "{{loopItem[1]}}",
+          "variableName": "",
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000,
+          "blockId": "forms"
+        }
+      },
+      {
+        "id": "mvlv7ios-31j38uym",
+        "label": "Click element",
+        "position": {
+          "x": 540,
+          "y": -26
+        },
+        "data": {
+          "description": "点击触发正文输入",
+          "disableBlock": false,
+          "findBy": "cssSelector",
+          "markEl": false,
+          "multiple": false,
+          "selector": "#contentDiv_0",
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000,
+          "blockId": "event-click"
+        }
+      },
+      {
+        "id": "mvlv7zal-hu1so274",
+        "label": "Forms",
+        "position": {
+          "x": 810,
+          "y": -26
+        },
+        "data": {
+          "assignVariable": false,
+          "clearValue": true,
+          "dataColumn": "",
+          "delay": 0,
+          "description": "",
+          "disableBlock": false,
+          "events": [],
+          "findBy": "cssSelector",
+          "getValue": false,
+          "markEl": false,
+          "multiple": false,
+          "optionPosition": "1",
+          "saveData": false,
+          "selectOptionBy": "value",
+          "selected": true,
+          "selector": "#contentDiv_0",
+          "type": "text-field",
+          "value": "{{loopItem[1]}}",
+          "variableName": "",
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000,
+          "blockId": "forms"
+        }
+      },
+      {
+        "id": "mvlv9bej-iwe14308",
+        "label": "Upload file",
+        "position": {
+          "x": 0,
+          "y": 117
+        },
+        "data": {
+          "accept": "",
+          "description": "",
+          "disableBlock": false,
+          "fallbackToPicker": false,
+          "filePath": "{{loopItem[2]}}",
+          "filePattern": "",
+          "fileVariable": "",
+          "findBy": "cssSelector",
+          "multiple": false,
+          "selector": "div.xmail-ui-split-btn.ui-split-btn-size32 > div.ui-split-btn-left",
+          "sourceMode": "file-path",
+          "verifyAfterUpload": true,
+          "waitForSelector": false,
+          "waitSelectorTimeout": 10000,
+          "blockId": "upload-file"
+        }
+      },
+      {
+        "id": "mvlvbgkl-fripa4qu",
+        "label": "Loop breakpoint",
+        "position": {
+          "x": 870,
+          "y": 117.5
+        },
+        "data": {
+          "clearLoop": false,
+          "description": "",
+          "disableBlock": false,
+          "loopId": "3y7trw1cyj",
+          "blockId": "loop-breakpoint"
+        }
+      },
+      {
+        "id": "mvlvbz9r-p0q3k6sc",
+        "label": "Click element",
+        "position": {
+          "x": 600,
+          "y": 117
+        },
+        "data": {
+          "description": "点击发送",
+          "disableBlock": false,
+          "findBy": "cssSelector",
+          "markEl": false,
+          "multiple": false,
+          "selector": "div.ui-toolbar-ellipsis-btns:nth-of-type(1) > div.xmail-ui-btn.ui-btn-size32:nth-of-type(1)",
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000,
+          "blockId": "event-click"
+        }
+      },
+      {
+        "id": "mvlviaej-m7qj8ihb",
+        "label": "Press key",
+        "position": {
+          "x": 818,
+          "y": -169
+        },
+        "data": {
+          "action": "press-key",
+          "description": "",
+          "disableBlock": false,
+          "keys": "Enter",
+          "keysToPress": "",
+          "pressTime": "0",
+          "selector": "input.cmp-account-input",
+          "blockId": "press-key"
+        }
+      },
+      {
+        "id": "mvlvkdeb-vh833x61",
+        "label": "Delay",
+        "position": {
+          "x": 330,
+          "y": 117.5
+        },
+        "data": {
+          "description": "",
+          "disableBlock": false,
+          "time": "2500",
+          "blockId": "delay"
+        }
+      },
+      {
+        "id": "mvlvw74d-y4fx5jul",
+        "label": "Close tab/window",
+        "position": {
+          "x": 270,
+          "y": 260
+        },
+        "data": {
+          "activeTab": true,
+          "allWindows": false,
+          "closeType": "tab",
+          "description": "",
+          "disableBlock": false,
+          "url": "",
+          "blockId": "close-tab"
+        }
+      },
+      {
+        "id": "mvlxa4bl-x1k7zbn0",
+        "label": "Delay",
+        "position": {
+          "x": 0,
+          "y": 260
+        },
+        "data": {
+          "disableBlock": false,
+          "time": "2500",
+          "description": "",
+          "blockId": "delay"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "mvlt3mvw-8f99vzt7",
+        "source": "mvj5gpm7-2xwo3jy4",
+        "target": "mvlt3i9s-ljr0sw0z",
+        "sourceHandle": "trigger-output-1",
+        "targetHandle": "new-tab-input-1"
+      },
+      {
+        "id": "mvlt4ohv-ppsqh5bd",
+        "source": "mvlt3i9s-ljr0sw0z",
+        "target": "mvj5gxku-gkxep64d",
+        "sourceHandle": "new-tab-output-1",
+        "targetHandle": "parse-excel-input-1"
+      },
+      {
+        "id": "mvlt9it6-ob4cwjls",
+        "source": "mvj5gxku-gkxep64d",
+        "target": "mvlt9crd-aygci2v8",
+        "sourceHandle": "parse-excel-output-1",
+        "targetHandle": "loop-data-input-1"
+      },
+      {
+        "id": "mvltamp4-ba9av9zr",
+        "source": "mvlt9crd-aygci2v8",
+        "target": "mvltakxj-oxm2zu3w",
+        "sourceHandle": "loop-data-output-1",
+        "targetHandle": "event-click-input-1"
+      },
+      {
+        "id": "mvltr5u5-fobv99cf",
+        "source": "mvltakxj-oxm2zu3w",
+        "target": "mvltr2zk-o7rhacqd",
+        "sourceHandle": "event-click-output-1",
+        "targetHandle": "event-click-input-1"
+      },
+      {
+        "id": "mvltrh9j-utm3x1l5",
+        "source": "mvltr2zk-o7rhacqd",
+        "target": "mvltbpn8-88fmlm1w",
+        "sourceHandle": "event-click-output-1",
+        "targetHandle": "forms-input-1"
+      },
+      {
+        "id": "mvlv6idw-tfwn2m7y",
+        "source": "mvlv5qjf-k200jy2n",
+        "target": "mvlv6ez9-mba3kfnb",
+        "sourceHandle": "event-click-output-1",
+        "targetHandle": "forms-input-1"
+      },
+      {
+        "id": "mvlv7leh-6lo83xab",
+        "source": "mvlv6ez9-mba3kfnb",
+        "target": "mvlv7ios-31j38uym",
+        "sourceHandle": "forms-output-1",
+        "targetHandle": "event-click-input-1"
+      },
+      {
+        "id": "mvlv81x2-tgal461p",
+        "source": "mvlv7ios-31j38uym",
+        "target": "mvlv7zal-hu1so274",
+        "sourceHandle": "event-click-output-1",
+        "targetHandle": "forms-input-1"
+      },
+      {
+        "id": "mvlv9d8r-y1c85wet",
+        "source": "mvlv7zal-hu1so274",
+        "target": "mvlv9bej-iwe14308",
+        "sourceHandle": "forms-output-1",
+        "targetHandle": "upload-file-input-1"
+      },
+      {
+        "id": "mvlvickm-liywvqr1",
+        "source": "mvltbpn8-88fmlm1w",
+        "target": "mvlviaej-m7qj8ihb",
+        "sourceHandle": "forms-output-1",
+        "targetHandle": "press-key-input-1"
+      },
+      {
+        "id": "mvlvier1-16fy5y4y",
+        "source": "mvlviaej-m7qj8ihb",
+        "target": "mvlv5qjf-k200jy2n",
+        "sourceHandle": "press-key-output-1",
+        "targetHandle": "event-click-input-1"
+      },
+      {
+        "id": "mvlvl6z1-johcpgbi",
+        "source": "mvlv9bej-iwe14308",
+        "target": "mvlvkdeb-vh833x61",
+        "sourceHandle": "upload-file-output-1",
+        "targetHandle": "delay-input-1"
+      },
+      {
+        "id": "mvlvla71-tzt9zowb",
+        "source": "mvlvkdeb-vh833x61",
+        "target": "mvlvbz9r-p0q3k6sc",
+        "sourceHandle": "delay-output-1",
+        "targetHandle": "event-click-input-1"
+      },
+      {
+        "id": "mvlvlc33-rz34axca",
+        "source": "mvlvbz9r-p0q3k6sc",
+        "target": "mvlvbgkl-fripa4qu",
+        "sourceHandle": "event-click-output-1",
+        "targetHandle": "loop-breakpoint-input-1"
+      },
+      {
+        "id": "mvlxab9b-tbilr1by",
+        "source": "mvlvbgkl-fripa4qu",
+        "target": "mvlxa4bl-x1k7zbn0",
+        "sourceHandle": "loop-breakpoint-output-1",
+        "targetHandle": "delay-input-1"
+      },
+      {
+        "id": "mvlxactr-p222mub0",
+        "source": "mvlxa4bl-x1k7zbn0",
+        "target": "mvlvw74d-y4fx5jul",
+        "sourceHandle": "delay-output-1",
+        "targetHandle": "close-tab-input-1"
+      }
+    ]
+  },
+  "trigger": {
+    "type": "manual",
+    "enabled": false
+  },
+  "settings": {
+    "saveLog": false,
+    "debugMode": false,
+    "notification": false,
+    "reuseLastState": false
+  }
+}
