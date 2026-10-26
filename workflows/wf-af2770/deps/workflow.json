@@ -1,0 +1,137 @@
+{
+  "id": "workflow",
+  "name": "测试子工作流",
+  "drawflow": {
+    "nodes": [
+      {
+        "id": "mvp28jhm-2b2krzql",
+        "label": "Trigger",
+        "position": {
+          "x": 120,
+          "y": 160
+        },
+        "data": {
+          "disableBlock": false,
+          "description": "",
+          "type": "manual",
+          "interval": 60,
+          "delay": 5,
+          "date": "",
+          "time": "00:00",
+          "url": "",
+          "shortcut": "",
+          "activeInInput": false,
+          "isUrlRegex": false,
+          "days": [],
+          "contextMenuName": "",
+          "contextTypes": [],
+          "parameters": [],
+          "preferParamsInTab": false,
+          "observeElement": {
+            "selector": "",
+            "baseSelector": "",
+            "matchPattern": "",
+            "targetOptions": {
+              "subtree": false,
+              "childList": true,
+              "attributes": false,
+              "attributeFilter": [],
+              "characterData": false
+            },
+            "baseElOptions": {
+              "subtree": false,
+              "childList": true,
+              "attributes": false,
+              "attributeFilter": [],
+              "characterData": false
+            }
+          },
+          "blockId": "trigger"
+        }
+      },
+      {
+        "id": "mvp290md-4p3w9qq6",
+        "label": "Forms",
+        "position": {
+          "x": 307.36820267678706,
+          "y": 399.25084279427506
+        },
+        "data": {
+          "disableBlock": false,
+          "description": "",
+          "findBy": "cssSelector",
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000,
+          "selector": "button.d-button.d-button-default",
+          "markEl": false,
+          "multiple": false,
+          "selected": true,
+          "clearValue": true,
+          "getValue": false,
+          "saveData": false,
+          "dataColumn": "",
+          "selectOptionBy": "value",
+          "optionPosition": "1",
+          "assignVariable": false,
+          "variableName": "",
+          "type": "text-field",
+          "value": "{{secret_mvp27os2111mfd5t_username}} - {{test-key_password}}",
+          "delay": 0,
+          "events": [],
+          "blockId": "forms"
+        }
+      },
+      {
+        "id": "mvp2aahn-nbs1nv5y",
+        "label": "Get secret",
+        "position": {
+          "x": 112,
+          "y": 317
+        },
+        "data": {
+          "credential": "mvp27os2-111mfd5t::username",
+          "variableName": "secret_mvp27os2111mfd5t_username",
+          "description": "",
+          "disableBlock": false,
+          "credentials": [
+            {
+              "credential": "mvp27os2-111mfd5t::username",
+              "variableName": "secret_mvp27os2111mfd5t_username"
+            },
+            {
+              "credential": "mvp27os2-111mfd5t::password",
+              "variableName": "test-key_password"
+            }
+          ],
+          "blockId": "get-secret"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "mvp292nj-bat8n71q",
+        "source": "mvp28jhm-2b2krzql",
+        "target": "mvp2aahn-nbs1nv5y",
+        "sourceHandle": "trigger-output-1",
+        "targetHandle": "get-secret-input-1"
+      },
+      {
+        "id": "mvp2aahn-b6j94x4w",
+        "source": "mvp2aahn-nbs1nv5y",
+        "target": "mvp290md-4p3w9qq6",
+        "sourceHandle": "get-secret-output-1",
+        "targetHandle": "forms-input-1"
+      }
+    ]
+  },
+  "trigger": {
+    "type": "manual",
+    "enabled": false
+  },
+  "settings": {
+    "saveLog": false,
+    "debugMode": false,
+    "notification": false,
+    "reuseLastState": false
+  }
+}
