@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "slug": "ragflow-3a49b6",
+  "title": "初始化ragflow 数据",
+  "description": "ragflow初始化",
+  "category": "research",
+  "tags": [
+    "ragflow"
+  ],
+  "author": "dcc123456",
+  "version": 1,
+  "hash": "41713279ffdafdbe42fd35c3defb43d0c05f14c2c588fba09fce68cb766fc314",
+  "images": [],
+  "dependencies": [
+    {
+      "id": "mvarpq8k-3jnr4w0j",
+      "name": "添加deepseek",
+      "path": "deps/deepseek.json"
+    },
+    {
+      "id": "mvi1e39h-5ywd72mr",
+      "name": "登录",
+      "path": "deps/workflow.json"
+    },
+    {
+      "id": "mvj32ing-ml4lllez",
+      "name": "注册",
+      "path": "deps/workflow-2.json"
+    },
+    {
+      "id": "mveuet77-8iwf8otd",
+      "name": "添加Siliconflow",
+      "path": "deps/siliconflow.json"
+    },
+    {
+      "id": "mvi10zm6-mfy5jf7m",
+      "name": "设置默认模型Embedding",
+      "path": "deps/embedding.json"
+    },
+    {
+      "id": "mvensiqj-cybl2jrs",
+      "name": "设置默认模型LLM",
+      "path": "deps/llm.json"
+    },
+    {
+      "id": "mtgklpzj-7t6k5lu1",
+      "name": "创建一个27.x知识库",
+      "path": "deps/27-x.json"
+    }
+  ],
+  "attachments": [
+    {
+      "name": "secrets.json",
+      "path": "attachments/secrets.json",
+      "size": 1852
+    }
+  ],
+  "createdAt": "2026-10-26T03:41:42.385Z",
+  "updatedAt": "2026-10-26T03:41:42.385Z"
+}
