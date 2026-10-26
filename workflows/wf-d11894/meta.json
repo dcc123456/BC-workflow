@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "slug": "wf-d11894",
+  "title": "邮件发送",
+  "description": "它可以根据excel 表格 来自动批量发送邮件",
+  "category": "communication",
+  "tags": [
+    "邮件发送"
+  ],
+  "author": "dcc123456",
+  "version": 1,
+  "hash": "0a2d53d7a5e014cf47c7265ee9f29ab45a8ea81976f4219c29d1a93aa98bdc1e",
+  "images": [],
+  "attachments": [
+    {
+      "name": "邮件发送附件.zip",
+      "path": "attachments/file.zip",
+      "size": 20088
+    }
+  ],
+  "videoUrl": "https://www.bilibili.com/video/BV1gfHN69En9/?vd_source=cc5bd9029a9b181a2119b592e955672c",
+  "createdAt": "2026-10-26T02:05:14.678Z",
+  "updatedAt": "2026-10-26T02:05:14.678Z"
+}
