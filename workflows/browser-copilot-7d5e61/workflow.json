@@ -1,0 +1,685 @@
+{
+  "id": "browser-copilot-7d5e61",
+  "name": "小红书发布推广browser-copilot",
+  "drawflow": {
+    "nodes": [
+      {
+        "id": "mvhhrdeg-h4txt2vf",
+        "label": "Trigger",
+        "position": {
+          "x": 0,
+          "y": -333.5
+        },
+        "data": {
+          "description": "为 GitHub 开源项目 browser-copilot 在小红书创作者平台制作并保存一篇图文笔记草稿，内容着重介绍工作流用法、使用场景、流程图、快捷操作、与 Automa 对比优势。 | Success: 元素存在 \"暂存离开\"",
+          "enabled": true,
+          "goalSpec": {
+            "successConditions": [
+              {
+                "description": "暂存按钮可见，说明仍处于编辑态",
+                "kind": "elementExists",
+                "target": {
+                  "text": "暂存离开"
+                }
+              }
+            ],
+            "summary": "为 GitHub 开源项目 browser-copilot 在小红书创作者平台制作并保存一篇图文笔记草稿，内容着重介绍工作流用法、使用场景、流程图、快捷操作、与 Automa 对比优势。",
+            "terminalStateConditions": [
+              {
+                "kind": "urlContains",
+                "value": "creator.xiaohongshu.com"
+              }
+            ]
+          },
+          "parameters": [
+            {
+              "data": {
+                "required": false
+              },
+              "defaultValue": "https://github.com/dcc123456/browser-copilot",
+              "description": "recorded from new-tab.url during generation",
+              "id": "param-newTabUrl",
+              "name": "newTabUrl",
+              "placeholder": "newTabUrl",
+              "type": "string"
+            },
+            {
+              "data": {
+                "required": false
+              },
+              "defaultValue": "https://creator.xiaohongshu.com/publish/publish?source=official",
+              "description": "recorded from new-tab.url during generation",
+              "id": "param-newTabUrl_2",
+              "name": "newTabUrl_2",
+              "placeholder": "newTabUrl_2",
+              "type": "string"
+            }
+          ],
+          "type": "manual",
+          "blockId": "trigger"
+        }
+      },
+      {
+        "id": "mvhhrgnu-vuxgodoh",
+        "label": "New tab",
+        "position": {
+          "x": 330,
+          "y": -333.5
+        },
+        "data": {
+          "__reliability": {
+            "readiness": {
+              "after": [
+                {
+                  "state": "navigation-settled"
+                }
+              ]
+            }
+          },
+          "url": "{{newTabUrl}}",
+          "waitTabLoaded": true,
+          "blockId": "new-tab"
+        }
+      },
+      {
+        "id": "mvhhrjo4-wuk2yhp6",
+        "label": "Read page",
+        "position": {
+          "x": 600,
+          "y": -335.5
+        },
+        "data": {
+          "__reliability": {
+            "readiness": {
+              "before": [
+                {
+                  "state": "navigation-settled"
+                }
+              ]
+            }
+          },
+          "__workflowAi": {
+            "goalContract": {
+              "goal": "Read the current page content",
+              "successCriteria": [
+                {
+                  "kind": "variableExists",
+                  "name": "readmeContent"
+                }
+              ],
+              "version": 1
+            }
+          },
+          "assignVariable": true,
+          "onError": {
+            "enable": true,
+            "retryInterval": 800,
+            "retryTimes": 2,
+            "toDo": "retry"
+          },
+          "source": "text",
+          "variableName": "readmeContent",
+          "blockId": "read-page"
+        }
+      },
+      {
+        "id": "mvhhro2m-zb5q137b",
+        "label": "New tab",
+        "position": {
+          "x": 0,
+          "y": -188.5
+        },
+        "data": {
+          "__reliability": {
+            "readiness": {
+              "after": [
+                {
+                  "state": "navigation-settled"
+                }
+              ]
+            }
+          },
+          "onError": {
+            "enable": true,
+            "retry": true,
+            "retryTimes": 3
+          },
+          "url": "{{newTabUrl_2}}",
+          "waitTabLoaded": true,
+          "blockId": "new-tab"
+        }
+      },
+      {
+        "id": "mvhhrqyt-yvo00w0r",
+        "label": "Click element",
+        "position": {
+          "x": 270,
+          "y": -188.5
+        },
+        "data": {
+          "__reliability": {
+            "locator": {
+              "selectorVerified": true,
+              "semantic": {
+                "text": "上传图文"
+              }
+            },
+            "readiness": {
+              "before": [
+                {
+                  "state": "present"
+                },
+                {
+                  "state": "visible"
+                },
+                {
+                  "state": "enabled"
+                }
+              ]
+            }
+          },
+          "__resolution": {
+            "rung": 3,
+            "from": "css|div[id=\"web\"] > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > span",
+            "to": "css|div[id=\"web\"] > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > span",
+            "matchCount": 3,
+            "at": 1792996797697,
+            "runId": "e89407db-b486-4d70-b603-5d3b7347904f"
+          },
+          "__resolutionHistory": [
+            {
+              "at": 1792553413638,
+              "from": "css|div[id=\"web\"] > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > span",
+              "matchCount": 3,
+              "runId": "1da2521a-d659-4d1e-aa4c-e2f164b2ee20",
+              "rung": 3,
+              "to": "css|div[id=\"web\"] > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > span"
+            },
+            {
+              "at": 1792551841812,
+              "from": "css|div[id=\"web\"] > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > span",
+              "matchCount": 3,
+              "runId": "3ed9b2dd-9cdb-4240-bbbb-c76a771d596b",
+              "rung": 3,
+              "to": "css|div[id=\"web\"] > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > span"
+            },
+            {
+              "at": 1792550273199,
+              "from": "css|div[id=\"web\"] > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > span",
+              "matchCount": 3,
+              "runId": "c2f1c629-c767-4a8c-9bcf-881c45b917ec",
+              "rung": 3,
+              "to": "css|div[id=\"web\"] > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > span"
+            },
+            {
+              "at": 1792549791111,
+              "from": "css|div[id=\"web\"] > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > span",
+              "matchCount": 3,
+              "runId": "8b97b116-05fd-47d1-9335-b3b17722d742",
+              "rung": 3,
+              "to": "css|div[id=\"web\"] > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > span"
+            }
+          ],
+          "findBy": "cssSelector",
+          "label": "切换到上传图文选项卡",
+          "onError": {
+            "enable": true,
+            "retryInterval": 800,
+            "retryTimes": 2,
+            "toDo": "retry"
+          },
+          "selector": "div[id=\"web\"] > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > span",
+          "selectorVerified": true,
+          "target": {
+            "primary": {
+              "how": "css",
+              "value": "div[id=\"web\"] > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > span"
+            },
+            "fallbacks": [
+              {
+                "how": "text",
+                "tag": "span",
+                "value": "上传图文"
+              }
+            ]
+          },
+          "waitForSelector": true,
+          "waitSelectorTimeout": 5000,
+          "blockId": "event-click"
+        }
+      },
+      {
+        "id": "mvhhsm7g-4brp1x0d",
+        "label": "JavaScript code",
+        "position": {
+          "x": 0,
+          "y": -35
+        },
+        "data": {
+          "code": "\nconst canvas = document.createElement('canvas');\ncanvas.width = 1080;\ncanvas.height = 1440;\nconst ctx = canvas.getContext('2d');\n\n// 背景渐变：深蓝紫到科技蓝\nconst grad = ctx.createLinearGradient(0, 0, 1080, 1440);\ngrad.addColorStop(0, '#0f0c29');\ngrad.addColorStop(0.5, '#302b63');\ngrad.addColorStop(1, '#24243e');\nctx.fillStyle = grad;\nctx.fillRect(0, 0, 1080, 1440);\n\n// 装饰：右上角光晕\nconst glow = ctx.createRadialGradient(900, 200, 0, 900, 200, 400);\nglow.addColorStop(0, 'rgba(0,212,255,0.25)');\nglow.addColorStop(1, 'rgba(0,212,255,0)');\nctx.fillStyle = glow;\nctx.fillRect(0, 0, 1080, 1440);\n\n// 左下光晕\nconst glow2 = ctx.createRadialGradient(150, 1200, 0, 150, 1200, 350);\nglow2.addColorStop(0, 'rgba(139,92,246,0.2)');\nglow2.addColorStop(1, 'rgba(139,92,246,0)');\nctx.fillStyle = glow2;\nctx.fillRect(0, 0, 1080, 1440);\n\n// 顶部标签\nctx.fillStyle = 'rgba(0,212,255,0.15)';\nctx.beginPath();\nctx.roundRect(60, 100, 280, 56, 28);\nctx.fill();\nctx.fillStyle = '#00d4ff';\nctx.font = 'bold 28px \"PingFang SC\", \"Microsoft YaHei\", sans-serif';\nctx.textAlign = 'center';\nctx.fillText('🤖 开源效率神器', 200, 137);\n\n// 主标题第一行\nctx.textAlign = 'left';\nctx.fillStyle = '#ffffff';\nctx.font = 'bold 88px \"PingFang SC\", \"Microsoft YaHei\", sans-serif';\nctx.fillText('浏览器里', 80, 310);\n\n// 主标题第二行（高亮）\nctx.fillStyle = '#00d4ff';\nctx.fillText('住了个AI', 80, 420);\nctx.fillStyle = '#ffffff';\nctx.fillText('打工人', 80, 530);\n\n// 副标题\nctx.fillStyle = 'rgba(255,255,255,0.7)';\nctx.font = '36px \"PingFang SC\", \"Microsoft YaHei\", sans-serif';\nctx.fillText('Browser Copilot · 工作流自动化', 80, 620);\n\n// 分隔线\nconst lineGrad = ctx.createLinearGradient(80, 680, 600, 680);\nlineGrad.addColorStop(0, '#00d4ff');\nlineGrad.addColorStop(1, 'rgba(0,212,255,0)');\nctx.fillStyle = lineGrad;\nctx.fillRect(80, 680, 520, 3);\n\n// 卖点胶囊\nconst capsules = [\n  { icon: '💬', text: '对话生成工作流' },\n  { icon: '⚡', text: '零代码浏览器自动化' },\n  { icon: '🧠', text: 'AI Agent 驱动' },\n  { icon: '🔥', text: '比 Automa 更强' }\n];\n\nlet cy = 740;\ncapsules.forEach((c, i) => {\n  // 胶囊背景\n  ctx.fillStyle = 'rgba(255,255,255,0.08)';\n  ctx.beginPath();\n  ctx.roundRect(80, cy, 500, 72, 36);\n  ctx.fill();\n  \n  // 左侧亮色边\n  ctx.fillStyle = '#00d4ff';\n  ctx.beginPath();\n  ctx.roundRect(80, cy, 6, 72, 3);\n  ctx.fill();\n  \n  // 文字\n  ctx.fillStyle = '#ffffff';\n  ctx.font = 'bold 34px \"PingFang SC\", \"Microsoft YaHei\", sans-serif';\n  ctx.textAlign = 'left';\n  ctx.fillText(`${c.icon}  ${c.text}`, 110, cy + 48);\n  cy += 92;\n});\n\n// 流程图示意区域\nconst flowY = 1130;\nctx.fillStyle = 'rgba(255,255,255,0.05)';\nctx.beginPath();\nctx.roundRect(60, flowY - 20, 960, 160, 20);\nctx.fill();\n\nctx.fillStyle = 'rgba(255,255,255,0.5)';\nctx.font = '26px \"PingFang SC\", \"Microsoft YaHei\", sans-serif';\nctx.textAlign = 'center';\nctx.fillText('— 工作流示意 —', 540, flowY + 10);\n\n// 流程节点\nconst nodes = ['你说需求', 'AI 理解', '自动操作', '导出结果'];\nconst nodeColors = ['#6366f1', '#8b5cf6', '#06b6d4', '#10b981'];\nconst startX = 140;\nconst spacing = 220;\nnodes.forEach((n, i) => {\n  const nx = startX + i * spacing;\n  ctx.fillStyle = nodeColors[i];\n  ctx.beginPath();\n  ctx.roundRect(nx - 70, flowY + 30, 140, 56, 14);\n  ctx.fill();\n  ctx.fillStyle = '#fff';\n  ctx.font = 'bold 26px \"PingFang SC\", \"Microsoft YaHei\", sans-serif';\n  ctx.fillText(n, nx, flowY + 66);\n  \n  // 箭头\n  if (i < 3) {\n    ctx.fillStyle = 'rgba(255,255,255,0.4)';\n    ctx.font = '30px sans-serif';\n    ctx.fillText('→', nx + 90, flowY + 66);\n  }\n});\n\n// 底部出处\nctx.fillStyle = 'rgba(255,255,255,0.4)';\nctx.font = '26px \"PingFang SC\", \"Microsoft YaHei\", sans-serif';\nctx.textAlign = 'center';\nctx.fillText('GitHub 开源 · dcc123456/browser-copilot', 540, 1390);\n\nautomaSetVariable('coverImage', canvas.toDataURL('image/png'));\nautomaNextBlock('cover generated');\n",
+          "description": "生成小红书图片\nproduce an image artifact (canvas drawing / data URL) [image-artifact]: sanctioned capability gap: no declarative operator draws or exports an image (声明式算子阶梯里没有“产出图片”这一级) (tried: declarative ladder: none produces an image artifact)",
+          "blockId": "javascript-code"
+        }
+      },
+      {
+        "id": "mvhhsp80-lt3pnewr",
+        "label": "Upload file",
+        "position": {
+          "x": 330,
+          "y": -45.5
+        },
+        "data": {
+          "__reliability": {
+            "readiness": {
+              "before": [
+                {
+                  "state": "present"
+                }
+              ]
+            }
+          },
+          "__workflowAi": {
+            "goalContract": {
+              "evidence": [
+                {
+                  "kind": "element",
+                  "note": "upload target",
+                  "ref": "input[type=file]"
+                },
+                {
+                  "kind": "variable",
+                  "note": "file source",
+                  "ref": "coverImage"
+                }
+              ],
+              "failureMeaning": [
+                "The target element is missing or is not a file input / drop zone.",
+                "The file variable is missing or holds invalid file data.",
+                "The control does not accept the number of files provided."
+              ],
+              "goal": "Put file(s) from variable \"coverImage\" into the upload control (input[type=file])",
+              "repairHints": [
+                {
+                  "action": "Re-locate the real input[type=file], including hidden inputs.",
+                  "target": "locator"
+                },
+                {
+                  "action": "Check for a custom drop zone and target it.",
+                  "target": "locator"
+                },
+                {
+                  "action": "Fix the multiple flag to match the control.",
+                  "target": "parameter"
+                },
+                {
+                  "action": "Fix the file variable / file data.",
+                  "target": "parameter"
+                }
+              ],
+              "successCriteria": [
+                {
+                  "kind": "elementExists",
+                  "target": {
+                    "stableAttributes": {
+                      "data-css": "input[type=file]"
+                    }
+                  }
+                },
+                {
+                  "kind": "variableExists",
+                  "name": "coverImage"
+                }
+              ],
+              "version": 1
+            }
+          },
+          "fileVariable": "coverImage",
+          "findBy": "cssSelector",
+          "label": "上传封面图到小红书编辑器",
+          "onError": {
+            "enable": true,
+            "retryInterval": 800,
+            "retryTimes": 2,
+            "toDo": "retry"
+          },
+          "selector": "input[type=file]",
+          "selectorVerified": true,
+          "sourceMode": "workflow-file",
+          "blockId": "upload-file"
+        }
+      },
+      {
+        "id": "mvhhsut6-yhhgxkt3",
+        "label": "AI agent",
+        "position": {
+          "x": 0,
+          "y": 118.5
+        },
+        "data": {
+          "__workflowAi": {
+            "goalContract": {
+              "goal": "Generate the composed text for \"填写笔记标题\"",
+              "successCriteria": [
+                {
+                  "kind": "variableExists",
+                  "name": "aiFill1"
+                }
+              ],
+              "version": 1
+            }
+          },
+          "actOnPage": false,
+          "description": "AI 生成表单内容: 填写笔记标题",
+          "findBy": "cssSelector",
+          "maxToolRounds": 20,
+          "prompt": "根据读取页面内容： {{readmeContent}}\n为网页表单字段「填写笔记标题」生成要填写的内容。直接输出可填入输入框的纯文本，不要解释、不要引号。字数限制在20字以内\n",
+          "referenceValue": "浏览器里住了个AI打工人",
+          "selector": "",
+          "useSnapshot": false,
+          "variableName": "aiFill1",
+          "blockId": "ai-agent"
+        }
+      },
+      {
+        "id": "mvhhsut6-ntyxyrh3",
+        "label": "Forms",
+        "position": {
+          "x": 316,
+          "y": 127
+        },
+        "data": {
+          "__reliability": {
+            "locator": {
+              "selectorVerified": true,
+              "semantic": {
+                "accessibleName": "填写标题会有更多赞哦",
+                "role": "textbox"
+              }
+            },
+            "readiness": {
+              "after": [
+                {
+                  "state": "value-committed",
+                  "value": "{{aiFill1}}"
+                }
+              ],
+              "before": [
+                {
+                  "state": "present"
+                },
+                {
+                  "state": "visible"
+                },
+                {
+                  "state": "enabled"
+                }
+              ]
+            }
+          },
+          "__workflowAi": {
+            "goalContract": {
+              "goal": "Fill the form field (div > div:nth-of-type(2) > div > div > div:nth-of-type(1) > div:nth-of-type(2) > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > input, value \"浏览器里住了个AI打工人\")",
+              "successCriteria": [
+                {
+                  "kind": "elementExists",
+                  "target": {
+                    "stableAttributes": {
+                      "data-css": "div > div:nth-of-type(2) > div > div > div:nth-of-type(1) > div:nth-of-type(2) > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > input"
+                    }
+                  }
+                }
+              ],
+              "version": 1
+            }
+          },
+          "clearValue": true,
+          "findBy": "cssSelector",
+          "label": "填写笔记标题",
+          "onError": {
+            "enable": true,
+            "retryInterval": 800,
+            "retryTimes": 2,
+            "toDo": "retry"
+          },
+          "selector": "",
+          "target": {
+            "fallbacks": [
+              {
+                "how": "css",
+                "value": "div > div:nth-of-type(2) > div > div > div:nth-of-type(1) > div:nth-of-type(2) > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > input"
+              }
+            ],
+            "primary": {
+              "how": "role",
+              "role": "textbox",
+              "value": "填写标题会有更多赞哦"
+            }
+          },
+          "value": "{{aiFill1}}",
+          "waitForSelector": true,
+          "waitSelectorTimeout": 5000,
+          "blockId": "forms"
+        }
+      },
+      {
+        "id": "mvhht4uz-zfhibpr7",
+        "label": "JavaScript code",
+        "position": {
+          "x": 0,
+          "y": 282.5
+        },
+        "data": {
+          "code": "const text = `{{aiPostContent}}`\n\nconst el = document.querySelector('#post-textarea') || document.querySelector('[contenteditable=\"true\"]');\nel.focus();\nconst range = document.createRange();\nrange.selectNodeContents(el); range.collapse(false);\nconst sel = getSelection(); sel.removeAllRanges(); sel.addRange(range);\ndocument.execCommand('insertText', false, text);\nif (el.textContent.trim().length < 20) {\n  el.dispatchEvent(new InputEvent('beforeinput', {inputType:'insertText', data:text, bubbles:true, cancelable:true}));\n}\nif (el.textContent.trim().length < 20) {\n  el.innerHTML = text.split('\\n').map(l=>l?`<p>${l}</p>`:'<p><br></p>').join('');\n  el.dispatchEvent(new InputEvent('input',{bubbles:true}));\n}\nreturn {len: el.textContent.length};\n",
+          "description": "小红书正文编辑器是 ProseMirror 富文本（contenteditable div），forms 算子写入后内部状态不更新、字数仍为 0；clipboard 方式会报 Document is not focused。只有代码节点在页面内派发原生编辑指令才能可靠写入。",
+          "blockId": "javascript-code"
+        }
+      },
+      {
+        "id": "mvhht952-a4owqgtk",
+        "label": "Click element",
+        "position": {
+          "x": 600,
+          "y": 283
+        },
+        "data": {
+          "__reliability": {
+            "readiness": {
+              "before": [
+                {
+                  "state": "present"
+                },
+                {
+                  "state": "visible"
+                },
+                {
+                  "state": "enabled"
+                }
+              ]
+            }
+          },
+          "label": "点击暂存离开按钮保存草稿",
+          "onError": {
+            "enable": true,
+            "retryInterval": 800,
+            "retryTimes": 2,
+            "toDo": "retry"
+          },
+          "target": {
+            "fallbacks": [],
+            "label": "暂存离开",
+            "primary": {
+              "closedShadow": true,
+              "how": "cdp-shadow",
+              "role": "button",
+              "shadowHosts": [
+                "xhs-publish-btn"
+              ],
+              "tag": "button",
+              "value": "暂存离开"
+            }
+          },
+          "waitForSelector": true,
+          "waitSelectorTimeout": 5000,
+          "blockId": "event-click"
+        }
+      },
+      {
+        "id": "mvhi0dkh-kf0h4b1m",
+        "label": "AI agent",
+        "position": {
+          "x": 586,
+          "y": 127
+        },
+        "data": {
+          "__workflowAi": {
+            "addedBy": "ai"
+          },
+          "actOnPage": false,
+          "description": "",
+          "disableBlock": false,
+          "findBy": "cssSelector",
+          "maxToolRounds": 1,
+          "prompt": "为小红书生成一篇关于 Browser Copilot 的种草笔记正文。\n这是项目介绍： {{readmeContent}}\n要求包含以下要点：1. 工作流怎么用（侧边栏自然语言对话，AI自动理解并执行操作）；2. 使用场景（批量采集、自动发帖填表、定时任务、多平台发布、网页监控）；3. 工作流示意（需求->AI理解->自动操作->导出结果，全程可视化）。要求：使用适当的emoji，分段清晰，语气活泼，直接输出纯文本正文，不要任何解释、标题或多余的引号。",
+          "selector": "",
+          "useSnapshot": false,
+          "variableName": "aiPostContent",
+          "blockId": "ai-agent"
+        }
+      },
+      {
+        "id": "mvhjxgcw-996a0q96",
+        "label": "Delay",
+        "position": {
+          "x": 330,
+          "y": 283
+        },
+        "data": {
+          "description": "",
+          "disableBlock": false,
+          "time": "2500",
+          "blockId": "delay"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "mvhhrgnu-9aswit7v",
+        "source": "mvhhrdeg-h4txt2vf",
+        "target": "mvhhrgnu-vuxgodoh",
+        "sourceHandle": "trigger-output-1",
+        "targetHandle": "new-tab-input-1"
+      },
+      {
+        "id": "mvhhrjo5-xd2oi7tw",
+        "source": "mvhhrgnu-vuxgodoh",
+        "target": "mvhhrjo4-wuk2yhp6",
+        "sourceHandle": "new-tab-output-1",
+        "targetHandle": "read-page-input-1"
+      },
+      {
+        "id": "mvhhro2m-f5omf2c8",
+        "source": "mvhhrjo4-wuk2yhp6",
+        "target": "mvhhro2m-zb5q137b",
+        "sourceHandle": "read-page-output-1",
+        "targetHandle": "new-tab-input-1"
+      },
+      {
+        "id": "mvhhrqyt-olo2rf8w",
+        "source": "mvhhro2m-zb5q137b",
+        "target": "mvhhrqyt-yvo00w0r",
+        "sourceHandle": "new-tab-output-1",
+        "targetHandle": "event-click-input-1"
+      },
+      {
+        "id": "mvhhsm7g-16k5ku0d",
+        "source": "mvhhrqyt-yvo00w0r",
+        "target": "mvhhsm7g-4brp1x0d",
+        "sourceHandle": "event-click-output-1",
+        "targetHandle": "javascript-code-input-1"
+      },
+      {
+        "id": "mvhhsp80-ys01vmnj",
+        "source": "mvhhsm7g-4brp1x0d",
+        "target": "mvhhsp80-lt3pnewr",
+        "sourceHandle": "javascript-code-output-1",
+        "targetHandle": "upload-file-input-1"
+      },
+      {
+        "id": "mvhhsut6-ncze1ie5",
+        "source": "mvhhsp80-lt3pnewr",
+        "target": "mvhhsut6-yhhgxkt3",
+        "sourceHandle": "upload-file-output-1",
+        "targetHandle": "ai-agent-input-1"
+      },
+      {
+        "id": "mvhhsut6-t5ay343m",
+        "source": "mvhhsut6-yhhgxkt3",
+        "target": "mvhhsut6-ntyxyrh3",
+        "sourceHandle": "ai-agent-output-1",
+        "targetHandle": "forms-input-1"
+      },
+      {
+        "id": "mvhi1ore-3ynpfbcx",
+        "source": "mvhhsut6-ntyxyrh3",
+        "target": "mvhi0dkh-kf0h4b1m",
+        "sourceHandle": "forms-output-1",
+        "targetHandle": "ai-agent-input-1"
+      },
+      {
+        "id": "mvhi1uic-cmnyzfx2",
+        "source": "mvhi0dkh-kf0h4b1m",
+        "target": "mvhht4uz-zfhibpr7",
+        "sourceHandle": "ai-agent-output-1",
+        "targetHandle": "javascript-code-input-1"
+      },
+      {
+        "id": "mvhjxl60-uzzq9v56",
+        "source": "mvhht4uz-zfhibpr7",
+        "target": "mvhjxgcw-996a0q96",
+        "sourceHandle": "javascript-code-output-1",
+        "targetHandle": "delay-input-1"
+      },
+      {
+        "id": "mvhjxmrw-ei21s0p1",
+        "source": "mvhjxgcw-996a0q96",
+        "target": "mvhht952-a4owqgtk",
+        "sourceHandle": "delay-output-1",
+        "targetHandle": "event-click-input-1"
+      }
+    ]
+  },
+  "trigger": {
+    "type": "manual",
+    "enabled": false,
+    "parameters": [
+      {
+        "data": {
+          "required": false
+        },
+        "defaultValue": "https://github.com/dcc123456/browser-copilot",
+        "description": "recorded from new-tab.url during generation",
+        "id": "param-newTabUrl",
+        "name": "newTabUrl",
+        "placeholder": "newTabUrl",
+        "type": "string"
+      },
+      {
+        "data": {
+          "required": false
+        },
+        "defaultValue": "https://creator.xiaohongshu.com/publish/publish?source=official",
+        "description": "recorded from new-tab.url during generation",
+        "id": "param-newTabUrl_2",
+        "name": "newTabUrl_2",
+        "placeholder": "newTabUrl_2",
+        "type": "string"
+      }
+    ]
+  },
+  "settings": {
+    "saveLog": false,
+    "debugMode": false,
+    "notification": false,
+    "reuseLastState": false
+  }
+}
