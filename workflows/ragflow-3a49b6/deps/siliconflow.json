@@ -1,0 +1,292 @@
+{
+  "id": "siliconflow",
+  "name": "添加Siliconflow",
+  "drawflow": {
+    "nodes": [
+      {
+        "data": {
+          "activeInInput": false,
+          "blockId": "trigger",
+          "contextMenuName": "",
+          "contextTypes": [],
+          "date": "",
+          "days": [],
+          "delay": 5,
+          "description": "",
+          "disableBlock": false,
+          "interval": 60,
+          "isUrlRegex": false,
+          "observeElement": {
+            "baseElOptions": {
+              "attributeFilter": [],
+              "attributes": false,
+              "characterData": false,
+              "childList": true,
+              "subtree": false
+            },
+            "baseSelector": "",
+            "matchPattern": "",
+            "selector": "",
+            "targetOptions": {
+              "attributeFilter": [],
+              "attributes": false,
+              "characterData": false,
+              "childList": true,
+              "subtree": false
+            }
+          },
+          "parameters": [],
+          "preferParamsInTab": false,
+          "shortcut": "",
+          "time": "00:00",
+          "type": "manual",
+          "url": ""
+        },
+        "id": "mvarpq8k-ocq84bcc",
+        "label": "Trigger",
+        "position": {
+          "x": 0,
+          "y": -168.5
+        }
+      },
+      {
+        "data": {
+          "blockId": "get-secret",
+          "credential": "mv9fzyw7-ijf7joxd::url",
+          "description": "",
+          "disableBlock": false,
+          "variableName": "ragflow-url"
+        },
+        "id": "mvarrulp-ldzqs21u",
+        "label": "Get secret",
+        "position": {
+          "x": 270,
+          "y": -168.5
+        }
+      },
+      {
+        "data": {
+          "blockId": "event-click",
+          "description": "",
+          "disableBlock": false,
+          "findBy": "cssSelector",
+          "markEl": false,
+          "multiple": false,
+          "selector": "a.relative.flex",
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000
+        },
+        "id": "mvarszji-xqgi5d4t",
+        "label": "Click element",
+        "position": {
+          "x": 810,
+          "y": -169.5
+        }
+      },
+      {
+        "data": {
+          "blockId": "event-click",
+          "description": "",
+          "disableBlock": false,
+          "findBy": "cssSelector",
+          "markEl": false,
+          "multiple": false,
+          "selector": "main.size-full.min-w-0 > section.pt-8.size-full > aside.shrink-0.w-16 > nav.flex-1.overflow-auto > ul.px-2.md\\:px-6 > li.w-full.md\\:w-auto > button.inline-flex.items-center",
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000
+        },
+        "id": "mvaruoo5-ll87y7f7",
+        "label": "Click element",
+        "position": {
+          "x": 0,
+          "y": -26.5
+        }
+      },
+      {
+        "data": {
+          "blockId": "event-click",
+          "description": "",
+          "disableBlock": false,
+          "findBy": "cssSelector",
+          "markEl": false,
+          "multiple": false,
+          "selector": "button.flex.items-center[data-testid=\"sidebar-provider-SILICONFLOW\"]",
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000
+        },
+        "id": "mvarvkr7-s4qvsr8q",
+        "label": "Click element",
+        "position": {
+          "x": 330,
+          "y": -26.5
+        }
+      },
+      {
+        "data": {
+          "assignVariable": false,
+          "blockId": "forms",
+          "clearValue": true,
+          "dataColumn": "",
+          "delay": 0,
+          "description": "",
+          "disableBlock": false,
+          "events": [],
+          "findBy": "cssSelector",
+          "getValue": false,
+          "markEl": false,
+          "multiple": false,
+          "optionPosition": "1",
+          "saveData": false,
+          "selectOptionBy": "value",
+          "selected": true,
+          "selector": "#instance-name-input",
+          "type": "text-field",
+          "value": "siliconflow",
+          "variableName": "",
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000
+        },
+        "id": "mvarxc4l-zrnl1b12",
+        "label": "Forms",
+        "position": {
+          "x": 660,
+          "y": -26.5
+        }
+      },
+      {
+        "data": {
+          "assignVariable": false,
+          "blockId": "forms",
+          "clearValue": true,
+          "dataColumn": "",
+          "delay": 0,
+          "description": "填siliconflow key",
+          "disableBlock": false,
+          "events": [],
+          "findBy": "cssSelector",
+          "getValue": false,
+          "markEl": false,
+          "multiple": false,
+          "optionPosition": "1",
+          "saveData": false,
+          "selectOptionBy": "value",
+          "selected": true,
+          "selector": "input.peer\\/input.flex[name=\"api_key\"]",
+          "type": "text-field",
+          "value": "{{siliconflow-key}}",
+          "variableName": "",
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000
+        },
+        "id": "mvary6gz-i66gxz1n",
+        "label": "Forms",
+        "position": {
+          "x": 270,
+          "y": 116.5
+        }
+      },
+      {
+        "data": {
+          "blockId": "get-secret",
+          "credential": "mu22it2g-pwxvm59q::api-key",
+          "description": "",
+          "disableBlock": false,
+          "variableName": "siliconflow-key"
+        },
+        "id": "mvaryguk-ny9gjw9z",
+        "label": "Get secret",
+        "position": {
+          "x": 0,
+          "y": 117.5
+        }
+      },
+      {
+        "data": {
+          "blockId": "event-click",
+          "description": "保存",
+          "disableBlock": false,
+          "findBy": "cssSelector",
+          "markEl": false,
+          "multiple": false,
+          "selector": "div.sticky.top-0 > button.inline-flex.items-center",
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000
+        },
+        "id": "mvarzpmj-5uwkt6i4",
+        "label": "Click element",
+        "position": {
+          "x": 540,
+          "y": 116.5
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "mvarrw6c-g0h4fvqi",
+        "source": "mvarpq8k-ocq84bcc",
+        "sourceHandle": "trigger-output-1",
+        "target": "mvarrulp-ldzqs21u",
+        "targetHandle": "get-secret-input-1"
+      },
+      {
+        "id": "mvarvezv-43prfmgv",
+        "source": "mvarszji-xqgi5d4t",
+        "sourceHandle": "event-click-output-1",
+        "target": "mvaruoo5-ll87y7f7",
+        "targetHandle": "event-click-input-1"
+      },
+      {
+        "id": "mvarvnos-3jafsqjo",
+        "source": "mvaruoo5-ll87y7f7",
+        "sourceHandle": "event-click-output-1",
+        "target": "mvarvkr7-s4qvsr8q",
+        "targetHandle": "event-click-input-1"
+      },
+      {
+        "id": "mvarxofv-7amprp92",
+        "source": "mvarvkr7-s4qvsr8q",
+        "sourceHandle": "event-click-output-1",
+        "target": "mvarxc4l-zrnl1b12",
+        "targetHandle": "forms-input-1"
+      },
+      {
+        "id": "mvaryif0-y4kbzei3",
+        "source": "mvarxc4l-zrnl1b12",
+        "sourceHandle": "forms-output-1",
+        "target": "mvaryguk-ny9gjw9z",
+        "targetHandle": "get-secret-input-1"
+      },
+      {
+        "id": "mvaryxjn-bqo521m6",
+        "source": "mvaryguk-ny9gjw9z",
+        "sourceHandle": "get-secret-output-1",
+        "target": "mvary6gz-i66gxz1n",
+        "targetHandle": "forms-input-1"
+      },
+      {
+        "id": "mvarzt6z-xmp7t37f",
+        "source": "mvary6gz-i66gxz1n",
+        "sourceHandle": "forms-output-1",
+        "target": "mvarzpmj-5uwkt6i4",
+        "targetHandle": "event-click-input-1"
+      },
+      {
+        "id": "mvj4kfof-wmfiwn4p",
+        "source": "mvarrulp-ldzqs21u",
+        "sourceHandle": "get-secret-output-1",
+        "target": "mvarszji-xqgi5d4t",
+        "targetHandle": "event-click-input-1"
+      }
+    ]
+  },
+  "trigger": {
+    "type": "manual",
+    "enabled": false
+  },
+  "settings": {
+    "saveLog": false,
+    "debugMode": false,
+    "notification": false,
+    "reuseLastState": false
+  }
+}
