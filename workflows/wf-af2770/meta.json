@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "slug": "wf-af2770",
+  "title": "测试工作流",
+  "description": "",
+  "category": "other",
+  "tags": [],
+  "author": "dcc123456",
+  "version": 1,
+  "hash": "7d12369672d66b5b3e511600d332ad5fc80d54fd9ca88e5e672edac013eafc90",
+  "images": [],
+  "dependencies": [
+    {
+      "id": "mvp28jhm-pe59986c",
+      "name": "测试子工作流",
+      "path": "deps/workflow.json"
+    }
+  ],
+  "secrets": [
+    {
+      "id": "mvp27os2-111mfd5t",
+      "label": "test-key",
+      "fields": [
+        {
+          "key": "username",
+          "value": "chanx"
+        },
+        {
+          "key": "password",
+          "value": "1111",
+          "secret": true
+        }
+      ]
+    }
+  ],
+  "createdAt": "2026-10-26T09:52:52.341Z",
+  "updatedAt": "2026-10-26T09:52:52.341Z"
+}
