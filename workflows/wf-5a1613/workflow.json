@@ -1,0 +1,263 @@
+{
+  "id": "wf-5a1613",
+  "name": "豆奶签到",
+  "drawflow": {
+    "nodes": [
+      {
+        "id": "mtrzodjt-9bpv6rtm",
+        "label": "Trigger",
+        "position": {
+          "x": 0,
+          "y": -108
+        },
+        "data": {
+          "description": "",
+          "type": "manual",
+          "blockId": "trigger"
+        }
+      },
+      {
+        "id": "mtrzodjt-ygiihmes",
+        "label": "New tab",
+        "position": {
+          "x": 270,
+          "y": -109
+        },
+        "data": {
+          "description": "Open https://dounai.pro/user/panel",
+          "url": "https://dounai.pro/user/panel",
+          "waitTabLoaded": true,
+          "blockId": "new-tab"
+        }
+      },
+      {
+        "id": "mtrzodjt-2egme6a5",
+        "label": "Wait connections",
+        "position": {
+          "x": 600,
+          "y": -109
+        },
+        "data": {
+          "description": "等待页面加载",
+          "timeout": 10000,
+          "blockId": "wait-connections"
+        }
+      },
+      {
+        "id": "mtrzodk0-82kvfi4o",
+        "label": "JavaScript code",
+        "position": {
+          "x": 870,
+          "y": -109
+        },
+        "data": {
+          "code": "\n// 找到\"立即续命\"按钮并点击\nconst allButtons = document.querySelectorAll('button');\nfor (const btn of allButtons) {\n  if (btn.textContent.includes('立即续命')) {\n    btn.click();\n    return 'clicked';\n  }\n}\nreturn 'not found';\n",
+          "description": "找到\"立即续命\"按钮并点击",
+          "timeout": 20000,
+          "blockId": "javascript-code"
+        }
+      },
+      {
+        "id": "mtrzodk0-gy7pheyj",
+        "label": "AI agent",
+        "position": {
+          "x": 270,
+          "y": 34
+        },
+        "data": {
+          "actOnPage": true,
+          "description": "验证码信息",
+          "findBy": "cssSelector",
+          "maxToolRounds": 8,
+          "onError": {
+            "enable": true,
+            "retry": true,
+            "retryTimes": 3,
+            "toDo": "fallback"
+          },
+          "prompt": "查看验证码弹窗中的数学计算题，识别算式和答案\n\n以上是要求。根据要求从目标元素中识别验证码并得出答案，只输出结果本身，不要解释、不要引号。\n",
+          "purpose": "ocr-extract",
+          "selector": "#checkin-captcha-box img",
+          "useSnapshot": false,
+          "variableName": "ocrExtract2",
+          "blockId": "ai-agent"
+        }
+      },
+      {
+        "id": "mtrzodk0-33tllbw8",
+        "label": "Forms",
+        "position": {
+          "x": 546,
+          "y": 45
+        },
+        "data": {
+          "clearValue": true,
+          "description": "验证码输入框 - 输入计算结果",
+          "findBy": "cssSelector",
+          "selector": "#checkin_captcha_code",
+          "target": {
+            "fallbacks": [],
+            "primary": {
+              "how": "id",
+              "value": "checkin_captcha_code"
+            }
+          },
+          "type": "text-field",
+          "value": "{{ocrExtract2}}",
+          "blockId": "forms"
+        }
+      },
+      {
+        "id": "mttfdatl-m33vxvm8",
+        "label": "Delay",
+        "position": {
+          "x": 0,
+          "y": 46
+        },
+        "data": {
+          "description": "",
+          "disableBlock": false,
+          "time": "3500",
+          "blockId": "delay"
+        }
+      },
+      {
+        "id": "mtv78ytc-g4klbrs8",
+        "label": "Click element",
+        "position": {
+          "x": 851,
+          "y": 45
+        },
+        "data": {
+          "description": "点击签到",
+          "disableBlock": false,
+          "findBy": "cssSelector",
+          "markEl": false,
+          "multiple": false,
+          "selector": "#checkin-submit-btn",
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000,
+          "blockId": "event-click"
+        }
+      },
+      {
+        "id": "muz7gyx9-wlu4t3gu",
+        "label": "Element exists",
+        "position": {
+          "x": 579.2076719551274,
+          "y": 189.79500632874672
+        },
+        "data": {
+          "description": "",
+          "disableBlock": false,
+          "findBy": "cssSelector",
+          "markEl": false,
+          "selector": "#checkin",
+          "throwError": false,
+          "timeout": 500,
+          "tryCount": 3,
+          "blockId": "element-exists"
+        }
+      },
+      {
+        "id": "mv7xzg2z-ld7h540a",
+        "label": "Notification",
+        "position": {
+          "x": 857.8645833333333,
+          "y": 212.40271149770666
+        },
+        "data": {
+          "description": "",
+          "disableBlock": false,
+          "iconUrl": "",
+          "imageUrl": "",
+          "message": "完成了",
+          "title": "Hello world!",
+          "blockId": "notification"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "mtrzqdon-s4221xvi",
+        "source": "mtrzodjt-9bpv6rtm",
+        "target": "mtrzodjt-ygiihmes",
+        "sourceHandle": "trigger-output-1",
+        "targetHandle": "new-tab-input-1"
+      },
+      {
+        "id": "mtrzqdon-4pia8u5e",
+        "source": "mtrzodjt-ygiihmes",
+        "target": "mtrzodjt-2egme6a5",
+        "sourceHandle": "new-tab-output-1",
+        "targetHandle": "wait-connections-input-1"
+      },
+      {
+        "id": "mtrzqdon-uiiwca18",
+        "source": "mtrzodjt-2egme6a5",
+        "target": "mtrzodk0-82kvfi4o",
+        "sourceHandle": "wait-connections-output-1",
+        "targetHandle": "javascript-code-input-1"
+      },
+      {
+        "id": "mttfdis6-0dd0bjuf",
+        "source": "mtrzodk0-82kvfi4o",
+        "target": "mttfdatl-m33vxvm8",
+        "sourceHandle": "javascript-code-output-1",
+        "targetHandle": "delay-input-1"
+      },
+      {
+        "id": "mttfk4g2-5iw34w7e",
+        "source": "mttfdatl-m33vxvm8",
+        "target": "mtrzodk0-gy7pheyj",
+        "sourceHandle": "delay-output-1",
+        "targetHandle": "ai-agent-input-1"
+      },
+      {
+        "id": "mtv79k24-xeqqne96",
+        "source": "mtrzodk0-33tllbw8",
+        "target": "mtv78ytc-g4klbrs8",
+        "sourceHandle": "forms-output-1",
+        "targetHandle": "event-click-input-1"
+      },
+      {
+        "id": "mtv79xp0-x5b29mof",
+        "source": "mtrzodk0-gy7pheyj",
+        "target": "mtrzodk0-33tllbw8",
+        "sourceHandle": "ai-agent-output-1",
+        "targetHandle": "forms-input-1"
+      },
+      {
+        "id": "muz7jkrv-hnkino1r",
+        "source": "mtv78ytc-g4klbrs8",
+        "target": "muz7gyx9-wlu4t3gu",
+        "sourceHandle": "event-click-output-1",
+        "targetHandle": "element-exists-input-1"
+      },
+      {
+        "id": "muz7jquq-lglmnig4",
+        "source": "muz7gyx9-wlu4t3gu",
+        "target": "mtrzodk0-gy7pheyj",
+        "sourceHandle": "element-exists-output-1",
+        "targetHandle": "ai-agent-input-1"
+      },
+      {
+        "id": "mv7xzm1a-1ce1cnxh",
+        "source": "muz7gyx9-wlu4t3gu",
+        "target": "mv7xzg2z-ld7h540a",
+        "sourceHandle": "element-exists-output-2",
+        "targetHandle": "notification-input-1"
+      }
+    ]
+  },
+  "trigger": {
+    "type": "manual",
+    "enabled": false
+  },
+  "settings": {
+    "saveLog": false,
+    "debugMode": false,
+    "notification": false,
+    "reuseLastState": false
+  }
+}
