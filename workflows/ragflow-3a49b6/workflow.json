@@ -4,9 +4,14 @@
   "drawflow": {
     "nodes": [
       {
+        "id": "mtguqvu7-1yarmk37",
+        "label": "Trigger",
+        "position": {
+          "x": 0,
+          "y": -168.5
+        },
         "data": {
           "activeInInput": false,
-          "blockId": "trigger",
           "contextMenuName": "",
           "contextTypes": [],
           "date": "",
@@ -40,18 +45,18 @@
           "shortcut": "",
           "time": "00:00",
           "type": "manual",
-          "url": ""
-        },
-        "id": "mtguqvu7-1yarmk37",
-        "label": "Trigger",
-        "position": {
-          "x": 0,
-          "y": -168.5
+          "url": "",
+          "blockId": "trigger"
         }
       },
       {
+        "id": "mvaql1l9-br3op752",
+        "label": "Element exists",
+        "position": {
+          "x": 19.540088527119508,
+          "y": 135.42240477307905
+        },
         "data": {
-          "blockId": "element-exists",
           "description": "",
           "disableBlock": false,
           "findBy": "cssSelector",
@@ -59,33 +64,33 @@
           "selector": "div.relative.w-full > div.relative.w-full > div.absolute.inset-0 > div.flex.flex-col > div.w-full.max-w-\\[540px\\] > form.flex.flex-col > button.inline-flex.items-center",
           "throwError": false,
           "timeout": 500,
-          "tryCount": 1
-        },
-        "id": "mvaql1l9-br3op752",
-        "label": "Element exists",
-        "position": {
-          "x": 19.540088527119508,
-          "y": 135.42240477307905
+          "tryCount": 1,
+          "blockId": "element-exists"
         }
       },
       {
-        "data": {
-          "blockId": "delay",
-          "description": "",
-          "disableBlock": false,
-          "time": "1500"
-        },
         "id": "mvaqmvv0-rvs005bh",
         "label": "Delay",
         "position": {
           "x": 0,
           "y": -25.5
+        },
+        "data": {
+          "description": "",
+          "disableBlock": false,
+          "time": "1500",
+          "blockId": "delay"
         }
       },
       {
+        "id": "mvaqwlqc-3bz71iuh",
+        "label": "New tab",
+        "position": {
+          "x": 540,
+          "y": -169.5
+        },
         "data": {
           "active": true,
-          "blockId": "new-tab",
           "customUserAgent": false,
           "description": "ragflow登录",
           "disableBlock": false,
@@ -94,36 +99,36 @@
           "updatePrevTab": true,
           "url": "http://{{ragflow_url}}/login",
           "userAgent": "",
-          "waitTabLoaded": true
-        },
-        "id": "mvaqwlqc-3bz71iuh",
-        "label": "New tab",
-        "position": {
-          "x": 540,
-          "y": -169.5
+          "waitTabLoaded": true,
+          "blockId": "new-tab"
         }
       },
       {
+        "id": "mvasc0i1-7odzq3b8",
+        "label": "Execute workflow",
+        "position": {
+          "x": 530.3723041919255,
+          "y": 196.07705772750722
+        },
         "data": {
-          "blockId": "execute-workflow",
           "description": "添加deepseek",
           "disableBlock": false,
           "executeId": "",
           "globalData": "",
           "insertAllGlobalData": false,
           "insertAllVars": false,
-          "workflowId": "mvarpq8k-3jnr4w0j"
-        },
-        "id": "mvasc0i1-7odzq3b8",
-        "label": "Execute workflow",
-        "position": {
-          "x": 530.3723041919255,
-          "y": 196.07705772750722
+          "workflowId": "mvarpq8k-3jnr4w0j",
+          "blockId": "execute-workflow"
         }
       },
       {
+        "id": "mvasy7l2-1kyg4jfg",
+        "label": "Get secret",
+        "position": {
+          "x": 270,
+          "y": -168.5
+        },
         "data": {
-          "blockId": "get-secret",
           "credential": "mv9fzyw7-ijf7joxd::url",
           "credentials": [
             {
@@ -145,163 +150,158 @@
           ],
           "description": "",
           "disableBlock": false,
-          "variableName": "ragflow_url"
-        },
-        "id": "mvasy7l2-1kyg4jfg",
-        "label": "Get secret",
-        "position": {
-          "x": 270,
-          "y": -168.5
+          "variableName": "ragflow_url",
+          "blockId": "get-secret"
         }
       },
       {
-        "data": {
-          "blockId": "reload-tab",
-          "description": "",
-          "disableBlock": false,
-          "url": "{{ragflow_url}}"
-        },
         "id": "mven5ut7-9bbnk4sx",
         "label": "Reload tab",
         "position": {
           "x": 270,
           "y": -26.5
+        },
+        "data": {
+          "description": "",
+          "disableBlock": false,
+          "url": "{{ragflow_url}}",
+          "blockId": "reload-tab"
         }
       },
       {
-        "data": {
-          "blockId": "delay",
-          "description": "",
-          "disableBlock": false,
-          "time": "3000"
-        },
         "id": "mvetq3s5-u7ufaglo",
         "label": "Delay",
         "position": {
           "x": 540,
           "y": -25.5
+        },
+        "data": {
+          "description": "",
+          "disableBlock": false,
+          "time": "3000",
+          "blockId": "delay"
         }
       },
       {
+        "id": "mvj3caxx-47692zyk",
+        "label": "Execute workflow",
+        "position": {
+          "x": 810,
+          "y": -169.5
+        },
         "data": {
-          "blockId": "execute-workflow",
           "description": "登录",
           "disableBlock": false,
           "executeId": "",
           "globalData": "",
           "insertAllGlobalData": false,
           "insertAllVars": false,
-          "workflowId": "mvi1e39h-5ywd72mr"
-        },
-        "id": "mvj3caxx-47692zyk",
-        "label": "Execute workflow",
-        "position": {
-          "x": 810,
-          "y": -169.5
+          "workflowId": "mvi1e39h-5ywd72mr",
+          "blockId": "execute-workflow"
         }
       },
       {
+        "id": "mvj3ct9k-y81usgzb",
+        "label": "Execute workflow",
+        "position": {
+          "x": 526.8413727147547,
+          "y": 89.56239563800739
+        },
         "data": {
-          "blockId": "execute-workflow",
           "description": "注册",
           "disableBlock": false,
           "executeId": "",
           "globalData": "",
           "insertAllGlobalData": false,
           "insertAllVars": false,
-          "workflowId": "mvj32ing-ml4lllez"
-        },
-        "id": "mvj3ct9k-y81usgzb",
-        "label": "Execute workflow",
-        "position": {
-          "x": 526.8413727147547,
-          "y": 89.56239563800739
+          "workflowId": "mvj32ing-ml4lllez",
+          "blockId": "execute-workflow"
         }
       },
       {
+        "id": "mvj3j0li-2wp36phr",
+        "label": "Execute workflow",
+        "position": {
+          "x": 847.2073833200932,
+          "y": 124.6465856256034
+        },
         "data": {
-          "blockId": "execute-workflow",
           "description": "添加siliconflow",
           "disableBlock": false,
           "executeId": "",
           "globalData": "",
           "insertAllGlobalData": false,
           "insertAllVars": false,
-          "workflowId": "mveuet77-8iwf8otd"
-        },
-        "id": "mvj3j0li-2wp36phr",
-        "label": "Execute workflow",
-        "position": {
-          "x": 847.2073833200932,
-          "y": 124.6465856256034
+          "workflowId": "mveuet77-8iwf8otd",
+          "blockId": "execute-workflow"
         }
       },
       {
+        "id": "mvj3jnv2-rrxgy5e2",
+        "label": "Execute workflow",
+        "position": {
+          "x": 18.39792115056163,
+          "y": 343.98000166460486
+        },
         "data": {
-          "blockId": "execute-workflow",
           "description": "设置默认模型Embedding",
           "disableBlock": false,
           "executeId": "",
           "globalData": "",
           "insertAllGlobalData": false,
           "insertAllVars": false,
-          "workflowId": "mvi10zm6-mfy5jf7m"
-        },
-        "id": "mvj3jnv2-rrxgy5e2",
-        "label": "Execute workflow",
-        "position": {
-          "x": 18.39792115056163,
-          "y": 343.98000166460486
+          "workflowId": "mvi10zm6-mfy5jf7m",
+          "blockId": "execute-workflow"
         }
       },
       {
+        "id": "mvj3ktmv-wf1x55ma",
+        "label": "Execute workflow",
+        "position": {
+          "x": 291.70547211392284,
+          "y": 338.7113723732064
+        },
         "data": {
-          "blockId": "execute-workflow",
           "description": "设置默认模型LLM",
           "disableBlock": false,
           "executeId": "",
           "globalData": "",
           "insertAllGlobalData": false,
           "insertAllVars": false,
-          "workflowId": "mvensiqj-cybl2jrs"
-        },
-        "id": "mvj3ktmv-wf1x55ma",
-        "label": "Execute workflow",
-        "position": {
-          "x": 291.70547211392284,
-          "y": 338.7113723732064
+          "workflowId": "mvensiqj-cybl2jrs",
+          "blockId": "execute-workflow"
         }
       },
       {
+        "id": "mvj46csy-99g2nmn6",
+        "label": "Execute workflow",
+        "position": {
+          "x": 821.6413173854112,
+          "y": 338.6225253441538
+        },
         "data": {
-          "blockId": "execute-workflow",
           "description": "创建知识库",
           "disableBlock": false,
           "executeId": "",
           "globalData": "",
           "insertAllGlobalData": false,
           "insertAllVars": false,
-          "workflowId": "mtgklpzj-7t6k5lu1"
-        },
-        "id": "mvj46csy-99g2nmn6",
-        "label": "Execute workflow",
-        "position": {
-          "x": 585.7919188590024,
-          "y": 340.86871009202446
+          "workflowId": "mvj6hkxh-abh0bozk",
+          "blockId": "execute-workflow"
         }
       },
       {
-        "data": {
-          "blockId": "delay",
-          "description": "",
-          "disableBlock": false,
-          "time": "1500"
-        },
         "id": "mvj46jo2-hpklscvw",
         "label": "Delay",
         "position": {
-          "x": 436.73849279266796,
-          "y": 455.0967108451912
+          "x": 553.540099681937,
+          "y": 339.4181963298573
+        },
+        "data": {
+          "description": "",
+          "disableBlock": false,
+          "time": "1500",
+          "blockId": "delay"
         }
       }
     ],
@@ -309,106 +309,106 @@
       {
         "id": "mvaqws7i-sg27dm06",
         "source": "mtguqvu7-1yarmk37",
-        "sourceHandle": "trigger-output-1",
         "target": "mvasy7l2-1kyg4jfg",
+        "sourceHandle": "trigger-output-1",
         "targetHandle": "get-secret-input-1"
       },
       {
         "id": "mvasy7l3-xow8nedi",
         "source": "mvasy7l2-1kyg4jfg",
-        "sourceHandle": "get-secret-output-1",
         "target": "mvaqwlqc-3bz71iuh",
+        "sourceHandle": "get-secret-output-1",
         "targetHandle": "new-tab-input-1"
       },
       {
         "id": "mvetq927-eusflrdm",
         "source": "mven5ut7-9bbnk4sx",
-        "sourceHandle": "reload-tab-output-1",
         "target": "mvetq3s5-u7ufaglo",
+        "sourceHandle": "reload-tab-output-1",
         "targetHandle": "delay-input-1"
       },
       {
         "id": "mvetqaum-cti2e5xw",
         "source": "mvetq3s5-u7ufaglo",
-        "sourceHandle": "delay-output-1",
         "target": "mvaql1l9-br3op752",
+        "sourceHandle": "delay-output-1",
         "targetHandle": "element-exists-input-1"
       },
       {
         "id": "mvgaaixy-t034ooy4",
         "source": "mvaqmvv0-rvs005bh",
-        "sourceHandle": "delay-output-1",
         "target": "mven5ut7-9bbnk4sx",
+        "sourceHandle": "delay-output-1",
         "targetHandle": "reload-tab-input-1"
       },
       {
         "id": "mvj3cclk-lxbnig3x",
         "source": "mvaqwlqc-3bz71iuh",
-        "sourceHandle": "new-tab-output-1",
         "target": "mvj3caxx-47692zyk",
+        "sourceHandle": "new-tab-output-1",
         "targetHandle": "execute-workflow-input-1"
       },
       {
         "id": "mvj3cwfz-rf356o4k",
         "source": "mvaql1l9-br3op752",
-        "sourceHandle": "element-exists-output-1",
         "target": "mvj3ct9k-y81usgzb",
+        "sourceHandle": "element-exists-output-1",
         "targetHandle": "execute-workflow-input-1"
       },
       {
         "id": "mvj3dn3b-0e6hyet5",
         "source": "mvj3caxx-47692zyk",
-        "sourceHandle": "execute-workflow-output-1",
         "target": "mvaqmvv0-rvs005bh",
+        "sourceHandle": "execute-workflow-output-1",
         "targetHandle": "delay-input-1"
       },
       {
         "id": "mvj3g2ie-r9x1wtno",
         "source": "mvj3ct9k-y81usgzb",
-        "sourceHandle": "execute-workflow-output-1",
         "target": "mvasc0i1-7odzq3b8",
+        "sourceHandle": "execute-workflow-output-1",
         "targetHandle": "execute-workflow-input-1"
       },
       {
         "id": "mvj3g4se-rov7j7lu",
         "source": "mvaql1l9-br3op752",
-        "sourceHandle": "element-exists-output-2",
         "target": "mvasc0i1-7odzq3b8",
+        "sourceHandle": "element-exists-output-2",
         "targetHandle": "execute-workflow-input-1"
       },
       {
         "id": "mvj3j3ol-m5dn053k",
         "source": "mvasc0i1-7odzq3b8",
-        "sourceHandle": "execute-workflow-output-1",
         "target": "mvj3j0li-2wp36phr",
+        "sourceHandle": "execute-workflow-output-1",
         "targetHandle": "execute-workflow-input-1"
       },
       {
         "id": "mvj3jq6v-siy19waw",
         "source": "mvj3j0li-2wp36phr",
-        "sourceHandle": "execute-workflow-output-1",
         "target": "mvj3jnv2-rrxgy5e2",
+        "sourceHandle": "execute-workflow-output-1",
         "targetHandle": "execute-workflow-input-1"
       },
       {
         "id": "mvj3kwwe-veo0yq2q",
         "source": "mvj3jnv2-rrxgy5e2",
-        "sourceHandle": "execute-workflow-output-1",
         "target": "mvj3ktmv-wf1x55ma",
+        "sourceHandle": "execute-workflow-output-1",
         "targetHandle": "execute-workflow-input-1"
       },
       {
         "id": "mvj46m62-z3zw9scx",
         "source": "mvj3ktmv-wf1x55ma",
-        "sourceHandle": "execute-workflow-output-1",
         "target": "mvj46jo2-hpklscvw",
+        "sourceHandle": "execute-workflow-output-1",
         "targetHandle": "delay-input-1"
       },
       {
         "id": "mvj46nmy-n3jkluv3",
         "source": "mvj46jo2-hpklscvw",
-        "sourceHandle": "delay-output-1",
         "target": "mvj46csy-99g2nmn6",
+        "sourceHandle": "delay-output-1",
         "targetHandle": "execute-workflow-input-1"
       }
     ]
