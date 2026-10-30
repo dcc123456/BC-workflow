@@ -65,7 +65,7 @@
           "y": 34
         },
         "data": {
-          "actOnPage": true,
+          "actOnPage": false,
           "description": "验证码信息",
           "findBy": "cssSelector",
           "maxToolRounds": 8,
@@ -139,42 +139,6 @@
           "waitSelectorTimeout": 5000,
           "blockId": "event-click"
         }
-      },
-      {
-        "id": "muz7gyx9-wlu4t3gu",
-        "label": "Element exists",
-        "position": {
-          "x": 579.2076719551274,
-          "y": 189.79500632874672
-        },
-        "data": {
-          "description": "",
-          "disableBlock": false,
-          "findBy": "cssSelector",
-          "markEl": false,
-          "selector": "#checkin",
-          "throwError": false,
-          "timeout": 500,
-          "tryCount": 3,
-          "blockId": "element-exists"
-        }
-      },
-      {
-        "id": "mv7xzg2z-ld7h540a",
-        "label": "Notification",
-        "position": {
-          "x": 857.8645833333333,
-          "y": 212.40271149770666
-        },
-        "data": {
-          "description": "",
-          "disableBlock": false,
-          "iconUrl": "",
-          "imageUrl": "",
-          "message": "完成了",
-          "title": "Hello world!",
-          "blockId": "notification"
-        }
       }
     ],
     "edges": [
@@ -226,27 +190,6 @@
         "target": "mtrzodk0-33tllbw8",
         "sourceHandle": "ai-agent-output-1",
         "targetHandle": "forms-input-1"
-      },
-      {
-        "id": "muz7jkrv-hnkino1r",
-        "source": "mtv78ytc-g4klbrs8",
-        "target": "muz7gyx9-wlu4t3gu",
-        "sourceHandle": "event-click-output-1",
-        "targetHandle": "element-exists-input-1"
-      },
-      {
-        "id": "muz7jquq-lglmnig4",
-        "source": "muz7gyx9-wlu4t3gu",
-        "target": "mtrzodk0-gy7pheyj",
-        "sourceHandle": "element-exists-output-1",
-        "targetHandle": "ai-agent-input-1"
-      },
-      {
-        "id": "mv7xzm1a-1ce1cnxh",
-        "source": "muz7gyx9-wlu4t3gu",
-        "target": "mv7xzg2z-ld7h540a",
-        "sourceHandle": "element-exists-output-2",
-        "targetHandle": "notification-input-1"
       }
     ]
   },
