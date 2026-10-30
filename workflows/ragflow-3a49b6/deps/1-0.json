@@ -1,0 +1,386 @@
+{
+  "id": "1-0",
+  "name": "创建一个1.0知识库",
+  "drawflow": {
+    "nodes": [
+      {
+        "data": {
+          "activeInInput": false,
+          "blockId": "trigger",
+          "contextMenuName": "",
+          "contextTypes": [],
+          "date": "",
+          "days": [],
+          "delay": 5,
+          "description": "",
+          "disableBlock": false,
+          "interval": 60,
+          "isUrlRegex": false,
+          "observeElement": {
+            "baseElOptions": {
+              "attributeFilter": [],
+              "attributes": false,
+              "characterData": false,
+              "childList": true,
+              "subtree": false
+            },
+            "baseSelector": "",
+            "matchPattern": "",
+            "selector": "",
+            "targetOptions": {
+              "attributeFilter": [],
+              "attributes": false,
+              "characterData": false,
+              "childList": true,
+              "subtree": false
+            }
+          },
+          "parameters": [],
+          "preferParamsInTab": false,
+          "shortcut": "",
+          "time": "00:00",
+          "type": "manual",
+          "url": ""
+        },
+        "id": "mtgklpzj-1szfcqvc",
+        "label": "Trigger",
+        "position": {
+          "x": 0,
+          "y": -213
+        }
+      },
+      {
+        "data": {
+          "blockId": "event-click",
+          "description": "点击「创建知识库」按钮",
+          "disableBlock": false,
+          "findBy": "cssSelector",
+          "markEl": false,
+          "multiple": false,
+          "selector": "div[id=\"root\"] > div:nth-of-type(1) > main > article > header > div > div > div:nth-of-type(2) > button",
+          "target": {
+            "fallbacks": [
+              {
+                "how": "css",
+                "value": "div[id=\"root\"] > div:nth-of-type(1) > main > article > header > div > div > div:nth-of-type(2) > button"
+              }
+            ],
+            "primary": {
+              "how": "role",
+              "role": "button",
+              "value": "创建知识库"
+            }
+          },
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000
+        },
+        "id": "mtgklpzj-3jzigf5a",
+        "label": "Click element",
+        "position": {
+          "x": 600,
+          "y": -71
+        }
+      },
+      {
+        "data": {
+          "assignVariable": false,
+          "blockId": "forms",
+          "clearValue": true,
+          "dataColumn": "",
+          "delay": 0,
+          "description": "填写知识库名称",
+          "disableBlock": false,
+          "events": [],
+          "findBy": "cssSelector",
+          "getValue": false,
+          "markEl": false,
+          "multiple": false,
+          "optionPosition": "1",
+          "saveData": false,
+          "selectOptionBy": "value",
+          "selected": true,
+          "selector": "#:r5l:-form-item",
+          "target": {
+            "fallbacks": [
+              {
+                "how": "name",
+                "tag": "input",
+                "value": "name"
+              },
+              {
+                "how": "role",
+                "role": "textbox",
+                "value": "名称"
+              }
+            ],
+            "primary": {
+              "how": "id",
+              "value": ":r5l:-form-item"
+            }
+          },
+          "type": "text-field",
+          "value": "{{datasetName}}",
+          "variableName": "",
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000
+        },
+        "id": "mtgklpzj-2wjtt7y2",
+        "label": "Forms",
+        "position": {
+          "x": 0,
+          "y": 161
+        }
+      },
+      {
+        "data": {
+          "blockId": "delay",
+          "description": "",
+          "disableBlock": false,
+          "time": "2500"
+        },
+        "id": "mtgvmzwf-rybijva5",
+        "label": "Delay",
+        "position": {
+          "x": 878,
+          "y": -25.5
+        }
+      },
+      {
+        "data": {
+          "blockId": "event-click",
+          "description": "点击知识库",
+          "disableBlock": false,
+          "findBy": "cssSelector",
+          "markEl": false,
+          "multiple": false,
+          "selector": "div.flex.min-w-0:nth-of-type(2) > nav > ul.relative.flex > li.relative:nth-of-type(2) > a.h-10.px-4",
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000
+        },
+        "id": "mtgvnygv-amoaanek",
+        "label": "Click element",
+        "position": {
+          "x": 810,
+          "y": -214
+        }
+      },
+      {
+        "data": {
+          "blockId": "delay",
+          "description": "",
+          "disableBlock": false,
+          "time": "1500"
+        },
+        "id": "mtgvov8j-6nl6p5ij",
+        "label": "Delay",
+        "position": {
+          "x": 0,
+          "y": -25.5
+        }
+      },
+      {
+        "data": {
+          "blockId": "element-exists",
+          "description": "",
+          "disableBlock": false,
+          "findBy": "cssSelector",
+          "markEl": false,
+          "selector": "article.rounded-lg.border-border-button",
+          "throwError": false,
+          "timeout": 500,
+          "tryCount": 1
+        },
+        "id": "mvj3pekv-q2sibw45",
+        "label": "Element exists",
+        "position": {
+          "x": 270,
+          "y": -26.5
+        }
+      },
+      {
+        "data": {
+          "blockId": "event-click",
+          "description": "点击「创建知识库」按钮",
+          "disableBlock": false,
+          "findBy": "cssSelector",
+          "markEl": false,
+          "multiple": false,
+          "selector": "article.flex.flex-col",
+          "target": {
+            "fallbacks": [
+              {
+                "how": "css",
+                "value": "div[id=\"root\"] > div:nth-of-type(1) > main > article > header > div > div > div:nth-of-type(2) > button"
+              }
+            ],
+            "primary": {
+              "how": "role",
+              "role": "button",
+              "value": "创建知识库"
+            }
+          },
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000
+        },
+        "id": "mvj3s9bo-5no09kne",
+        "label": "Click element",
+        "position": {
+          "x": 600,
+          "y": 18
+        }
+      },
+      {
+        "data": {
+          "blockId": "event-click",
+          "description": "点击「保存」按钮创建知识库",
+          "disableBlock": false,
+          "findBy": "cssSelector",
+          "markEl": false,
+          "multiple": false,
+          "selector": "div.outline-none.outline-0 > div.-mx-6.-mb-6 > button.inline-flex.items-center[type=\"submit\"]",
+          "target": {
+            "fallbacks": [
+              {
+                "how": "text",
+                "tag": "button",
+                "value": "保存"
+              }
+            ],
+            "primary": {
+              "how": "role",
+              "role": "button",
+              "value": "保存"
+            }
+          },
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000
+        },
+        "id": "mvj3vjl8-d1ga38yz",
+        "label": "Click element",
+        "position": {
+          "x": 830,
+          "y": 161
+        }
+      },
+      {
+        "data": {
+          "blockId": "set-variable",
+          "description": "",
+          "disableBlock": false,
+          "value": "test",
+          "variableName": "datasetName"
+        },
+        "id": "mvj4gnui-1oqx7j3b",
+        "label": "Set variable",
+        "position": {
+          "x": 270,
+          "y": -213
+        }
+      },
+      {
+        "data": {
+          "blockId": "set-variable",
+          "description": "",
+          "disableBlock": false,
+          "value": "General",
+          "variableName": "parseName"
+        },
+        "id": "mvj4hn7c-1dtbgktt",
+        "label": "Set variable",
+        "position": {
+          "x": 540,
+          "y": -213
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "mtgvn61l-8qq47z4z",
+        "source": "mtgklpzj-3jzigf5a",
+        "sourceHandle": "event-click-output-1",
+        "target": "mtgvmzwf-rybijva5",
+        "targetHandle": "delay-input-1"
+      },
+      {
+        "id": "mtgvn7oh-isn1rec5",
+        "source": "mtgvmzwf-rybijva5",
+        "sourceHandle": "delay-output-1",
+        "target": "mtgklpzj-2wjtt7y2",
+        "targetHandle": "forms-input-1"
+      },
+      {
+        "id": "mtgvoy8q-yn32nbyg",
+        "source": "mtgvnygv-amoaanek",
+        "sourceHandle": "event-click-output-1",
+        "target": "mtgvov8j-6nl6p5ij",
+        "targetHandle": "delay-input-1"
+      },
+      {
+        "id": "mvj3pxql-44zdmg5n",
+        "source": "mtgvov8j-6nl6p5ij",
+        "sourceHandle": "delay-output-1",
+        "target": "mvj3pekv-q2sibw45",
+        "targetHandle": "element-exists-input-1"
+      },
+      {
+        "id": "mvj3spsd-612pyds9",
+        "source": "mvj3s9bo-5no09kne",
+        "sourceHandle": "event-click-output-1",
+        "target": "mtgvmzwf-rybijva5",
+        "targetHandle": "delay-input-1"
+      },
+      {
+        "id": "mvj3zm10-ela93e3k",
+        "source": "mvj3pekv-q2sibw45",
+        "sourceHandle": "element-exists-output-1",
+        "target": "mtgklpzj-3jzigf5a",
+        "targetHandle": "event-click-input-1"
+      },
+      {
+        "id": "mvj3ztn0-4j7e9bci",
+        "source": "mvj3pekv-q2sibw45",
+        "sourceHandle": "element-exists-output-2",
+        "target": "mvj3s9bo-5no09kne",
+        "targetHandle": "event-click-input-1"
+      },
+      {
+        "id": "mvj4h9wo-i68jxzqh",
+        "source": "mtgklpzj-1szfcqvc",
+        "sourceHandle": "trigger-output-1",
+        "target": "mvj4gnui-1oqx7j3b",
+        "targetHandle": "set-variable-input-1"
+      },
+      {
+        "id": "mvj4hs4v-3qlgx2h9",
+        "source": "mvj4gnui-1oqx7j3b",
+        "sourceHandle": "set-variable-output-1",
+        "target": "mvj4hn7c-1dtbgktt",
+        "targetHandle": "set-variable-input-1"
+      },
+      {
+        "id": "mvj4htls-ai14r1dd",
+        "source": "mvj4hn7c-1dtbgktt",
+        "sourceHandle": "set-variable-output-1",
+        "target": "mtgvnygv-amoaanek",
+        "targetHandle": "event-click-input-1"
+      },
+      {
+        "id": "mvj6jyeb-affuxbbf",
+        "source": "mtgklpzj-2wjtt7y2",
+        "sourceHandle": "forms-output-1",
+        "target": "mvj3vjl8-d1ga38yz",
+        "targetHandle": "event-click-input-1"
+      }
+    ]
+  },
+  "trigger": {
+    "type": "manual",
+    "enabled": false
+  },
+  "settings": {
+    "saveLog": false,
+    "debugMode": false,
+    "notification": false,
+    "reuseLastState": false
+  }
+}
