@@ -1,6 +1,6 @@
 {
-  "id": "27-x",
-  "name": "创建一个27.x知识库",
+  "id": "1-0",
+  "name": "创建一个1.0知识库",
   "drawflow": {
     "nodes": [
       {
@@ -128,70 +128,6 @@
         "label": "Forms",
         "position": {
           "x": 0,
-          "y": 161
-        }
-      },
-      {
-        "data": {
-          "blockId": "event-click",
-          "description": "点击分块方法下拉框",
-          "disableBlock": false,
-          "findBy": "cssSelector",
-          "markEl": false,
-          "multiple": false,
-          "selector": "form[id=\"dataset-creating-form\"] > div:nth-of-type(4) > div:nth-of-type(1) > div > button",
-          "target": {
-            "fallbacks": [
-              {
-                "how": "css",
-                "value": "form[id=\"dataset-creating-form\"] > div:nth-of-type(4) > div:nth-of-type(1) > div > button"
-              }
-            ],
-            "primary": {
-              "how": "role",
-              "role": "combobox",
-              "value": "请选择分块方法"
-            }
-          },
-          "waitForSelector": false,
-          "waitSelectorTimeout": 5000
-        },
-        "id": "mtgklpzj-kbvb0jzo",
-        "label": "Click element",
-        "position": {
-          "x": 270,
-          "y": 161
-        }
-      },
-      {
-        "data": {
-          "blockId": "event-click",
-          "description": "选择「General」分块方法",
-          "disableBlock": false,
-          "findBy": "text",
-          "markEl": false,
-          "multiple": false,
-          "selector": "{{parseName}}",
-          "target": {
-            "fallbacks": [
-              {
-                "how": "css",
-                "value": "div[id=\"radix-:r5t:\"] > div:nth-of-type(1)"
-              }
-            ],
-            "primary": {
-              "how": "role",
-              "role": "option",
-              "value": "General"
-            }
-          },
-          "waitForSelector": false,
-          "waitSelectorTimeout": 5000
-        },
-        "id": "mtgklpzj-csixuil3",
-        "label": "Click element",
-        "position": {
-          "x": 540,
           "y": 161
         }
       },
@@ -394,20 +330,6 @@
         "targetHandle": "delay-input-1"
       },
       {
-        "id": "mvj3vo5g-fvq9lbfb",
-        "source": "mtgklpzj-csixuil3",
-        "sourceHandle": "event-click-output-1",
-        "target": "mvj3vjl8-d1ga38yz",
-        "targetHandle": "event-click-input-1"
-      },
-      {
-        "id": "mvj3vulw-q47fdejg",
-        "source": "mtgklpzj-2wjtt7y2",
-        "sourceHandle": "forms-output-1",
-        "target": "mtgklpzj-kbvb0jzo",
-        "targetHandle": "event-click-input-1"
-      },
-      {
         "id": "mvj3zm10-ela93e3k",
         "source": "mvj3pekv-q2sibw45",
         "sourceHandle": "element-exists-output-1",
@@ -419,13 +341,6 @@
         "source": "mvj3pekv-q2sibw45",
         "sourceHandle": "element-exists-output-2",
         "target": "mvj3s9bo-5no09kne",
-        "targetHandle": "event-click-input-1"
-      },
-      {
-        "id": "mvj4bvu1-guisv7br",
-        "source": "mtgklpzj-kbvb0jzo",
-        "sourceHandle": "event-click-output-1",
-        "target": "mtgklpzj-csixuil3",
         "targetHandle": "event-click-input-1"
       },
       {
@@ -447,6 +362,13 @@
         "source": "mvj4hn7c-1dtbgktt",
         "sourceHandle": "set-variable-output-1",
         "target": "mtgvnygv-amoaanek",
+        "targetHandle": "event-click-input-1"
+      },
+      {
+        "id": "mvj6jyeb-affuxbbf",
+        "source": "mtgklpzj-2wjtt7y2",
+        "sourceHandle": "forms-output-1",
+        "target": "mvj3vjl8-d1ga38yz",
         "targetHandle": "event-click-input-1"
       }
     ]

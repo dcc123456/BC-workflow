@@ -8,8 +8,8 @@
     "ragflow"
   ],
   "author": "dcc123456",
-  "version": 1,
-  "hash": "41713279ffdafdbe42fd35c3defb43d0c05f14c2c588fba09fce68cb766fc314",
+  "version": 2,
+  "hash": "6f4dbc5bc57602e28c0879faea289f9fd720de4bda2d387021dd21be30c0126e",
   "images": [],
   "dependencies": [
     {
@@ -43,18 +43,58 @@
       "path": "deps/llm.json"
     },
     {
-      "id": "mtgklpzj-7t6k5lu1",
-      "name": "创建一个27.x知识库",
-      "path": "deps/27-x.json"
+      "id": "mvj6hkxh-abh0bozk",
+      "name": "创建一个1.0知识库",
+      "path": "deps/1-0.json"
     }
   ],
-  "attachments": [
+  "secrets": [
     {
-      "name": "secrets.json",
-      "path": "attachments/secrets.json",
-      "size": 1852
+      "id": "mv9fzyw7-ijf7joxd",
+      "label": "ragflow",
+      "fields": [
+        {
+          "key": "username",
+          "value": "chanx"
+        },
+        {
+          "key": "password",
+          "value": "",
+          "secret": true
+        },
+        {
+          "key": "email",
+          "value": "test-1243304602@qq.com"
+        },
+        {
+          "key": "url",
+          "value": "http://localhost:9222"
+        }
+      ]
+    },
+    {
+      "id": "mtgv38z0-mwvfx3zl",
+      "label": "deepseek配置",
+      "fields": [
+        {
+          "key": "deepseek-key",
+          "value": "",
+          "secret": true
+        }
+      ]
+    },
+    {
+      "id": "mu22it2g-pwxvm59q",
+      "label": "siliconflow",
+      "fields": [
+        {
+          "key": "api-key",
+          "value": "",
+          "secret": true
+        }
+      ]
     }
   ],
-  "createdAt": "2026-10-26T03:41:42.385Z",
-  "updatedAt": "2026-10-26T03:41:42.385Z"
+  "createdAt": "2026-10-30T11:42:11.714Z",
+  "updatedAt": "2026-10-30T11:42:11.714Z"
 }
