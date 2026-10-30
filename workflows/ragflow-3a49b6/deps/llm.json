@@ -4,9 +4,14 @@
   "drawflow": {
     "nodes": [
       {
+        "id": "mvensiqj-46v30niu",
+        "label": "Trigger",
+        "position": {
+          "x": 0,
+          "y": -97
+        },
         "data": {
           "activeInInput": false,
-          "blockId": "trigger",
           "contextMenuName": "",
           "contextTypes": [],
           "date": "",
@@ -52,33 +57,33 @@
           "shortcut": "",
           "time": "00:00",
           "type": "manual",
-          "url": ""
-        },
-        "id": "mvensiqj-46v30niu",
-        "label": "Trigger",
-        "position": {
-          "x": 0,
-          "y": -97
+          "url": "",
+          "blockId": "trigger"
         }
       },
       {
-        "data": {
-          "blockId": "get-secret",
-          "credential": "mv9fzyw7-ijf7joxd::url",
-          "description": "",
-          "disableBlock": false,
-          "variableName": "ragflow_url"
-        },
         "id": "mvent2wk-f4bkcvx2",
         "label": "Get secret",
         "position": {
           "x": 270,
           "y": -97
+        },
+        "data": {
+          "credential": "mv9fzyw7-ijf7joxd::url",
+          "description": "",
+          "disableBlock": false,
+          "variableName": "ragflow_url",
+          "blockId": "get-secret"
         }
       },
       {
+        "id": "mveoirp6-w1jqoxsi",
+        "label": "Click element",
+        "position": {
+          "x": 810,
+          "y": -98
+        },
         "data": {
-          "blockId": "event-click",
           "description": "点击设置模型",
           "disableBlock": false,
           "findBy": "cssSelector",
@@ -86,18 +91,18 @@
           "multiple": false,
           "selector": "a.relative.flex[data-testid=\"settings-entrypoint\"]",
           "waitForSelector": false,
-          "waitSelectorTimeout": 5000
-        },
-        "id": "mveoirp6-w1jqoxsi",
-        "label": "Click element",
-        "position": {
-          "x": 810,
-          "y": -98
+          "waitSelectorTimeout": 5000,
+          "blockId": "event-click"
         }
       },
       {
+        "id": "mveojlou-js0xk51o",
+        "label": "Click element",
+        "position": {
+          "x": 0,
+          "y": 45
+        },
         "data": {
-          "blockId": "event-click",
           "description": "",
           "disableBlock": false,
           "findBy": "cssSelector",
@@ -105,18 +110,18 @@
           "multiple": false,
           "selector": "button.inline-flex.items-center[data-testid=\"settings-nav-model-providers\"]",
           "waitForSelector": false,
-          "waitSelectorTimeout": 5000
-        },
-        "id": "mveojlou-js0xk51o",
-        "label": "Click element",
-        "position": {
-          "x": 0,
-          "y": 45
+          "waitSelectorTimeout": 5000,
+          "blockId": "event-click"
         }
       },
       {
+        "id": "mveok72l-2umrxijp",
+        "label": "Click element",
+        "position": {
+          "x": 330,
+          "y": 45
+        },
         "data": {
-          "blockId": "event-click",
           "description": "",
           "disableBlock": false,
           "findBy": "cssSelector",
@@ -124,18 +129,18 @@
           "multiple": false,
           "selector": "button.flex.items-center[data-testid=\"sidebar-default-models\"]",
           "waitForSelector": false,
-          "waitSelectorTimeout": 5000
-        },
-        "id": "mveok72l-2umrxijp",
-        "label": "Click element",
-        "position": {
-          "x": 330,
-          "y": 45
+          "waitSelectorTimeout": 5000,
+          "blockId": "event-click"
         }
       },
       {
+        "id": "mvepa6l6-1dv74d5x",
+        "label": "Click element",
+        "position": {
+          "x": 660,
+          "y": 45
+        },
         "data": {
-          "blockId": "event-click",
           "description": "",
           "disableBlock": false,
           "findBy": "cssSelector",
@@ -143,32 +148,27 @@
           "multiple": false,
           "selector": "div.flex.gap-3:nth-of-type(1) > div.w-3\\/4.flex-1 > button.flex.items-center[type=\"button\"]",
           "waitForSelector": false,
-          "waitSelectorTimeout": 5000
-        },
-        "id": "mvepa6l6-1dv74d5x",
-        "label": "Click element",
-        "position": {
-          "x": 660,
-          "y": 45
+          "waitSelectorTimeout": 5000,
+          "blockId": "event-click"
         }
       },
       {
-        "data": {
-          "blockId": "event-click",
-          "description": "设置LLM为deepseek-v4-pro",
-          "disableBlock": false,
-          "findBy": "text",
-          "markEl": false,
-          "multiple": false,
-          "selector": "deepseek-v4-pro",
-          "waitForSelector": false,
-          "waitSelectorTimeout": 5000
-        },
         "id": "mvi0w2c3-m845cuhw",
         "label": "Click element",
         "position": {
           "x": 990,
           "y": 45
+        },
+        "data": {
+          "description": "设置LLM为deepseek-v4-flash",
+          "disableBlock": false,
+          "findBy": "text",
+          "markEl": false,
+          "multiple": false,
+          "selector": "deepseek-v4-flash",
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000,
+          "blockId": "event-click"
         }
       }
     ],
@@ -176,43 +176,43 @@
       {
         "id": "mvenspwz-y3hocg9q",
         "source": "mvensiqj-46v30niu",
-        "sourceHandle": "trigger-output-1",
         "target": "mvent2wk-f4bkcvx2",
+        "sourceHandle": "trigger-output-1",
         "targetHandle": "get-secret-input-1"
       },
       {
         "id": "mveokjjh-kk39305y",
         "source": "mveojlou-js0xk51o",
-        "sourceHandle": "event-click-output-1",
         "target": "mveok72l-2umrxijp",
+        "sourceHandle": "event-click-output-1",
         "targetHandle": "event-click-input-1"
       },
       {
         "id": "mvi0d5e3-bn4gpi5o",
         "source": "mveoirp6-w1jqoxsi",
-        "sourceHandle": "event-click-output-1",
         "target": "mveojlou-js0xk51o",
+        "sourceHandle": "event-click-output-1",
         "targetHandle": "event-click-input-1"
       },
       {
         "id": "mvi0ejqy-39gukg6i",
         "source": "mveok72l-2umrxijp",
-        "sourceHandle": "event-click-output-1",
         "target": "mvepa6l6-1dv74d5x",
+        "sourceHandle": "event-click-output-1",
         "targetHandle": "event-click-input-1"
       },
       {
         "id": "mvi0w413-ge53qhxd",
         "source": "mvepa6l6-1dv74d5x",
-        "sourceHandle": "event-click-output-1",
         "target": "mvi0w2c3-m845cuhw",
+        "sourceHandle": "event-click-output-1",
         "targetHandle": "event-click-input-1"
       },
       {
         "id": "mvj4jogg-2na98ko4",
         "source": "mvent2wk-f4bkcvx2",
-        "sourceHandle": "get-secret-output-1",
         "target": "mveoirp6-w1jqoxsi",
+        "sourceHandle": "get-secret-output-1",
         "targetHandle": "event-click-input-1"
       }
     ]
