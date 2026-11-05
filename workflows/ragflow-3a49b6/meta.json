@@ -8,8 +8,8 @@
     "ragflow"
   ],
   "author": "dcc123456",
-  "version": 2,
-  "hash": "6f4dbc5bc57602e28c0879faea289f9fd720de4bda2d387021dd21be30c0126e",
+  "version": 3,
+  "hash": "adfbbdfbd47062417a83cc9649fab3cfa5c114d852e840ec184deaf04a181cc3",
   "images": [],
   "dependencies": [
     {
@@ -64,7 +64,7 @@
         },
         {
           "key": "email",
-          "value": "test-1243304602@qq.com"
+          "value": "a1243304602@qq.com"
         },
         {
           "key": "url",
@@ -95,6 +95,6 @@
       ]
     }
   ],
-  "createdAt": "2026-10-30T11:42:11.714Z",
-  "updatedAt": "2026-10-30T11:42:11.714Z"
+  "createdAt": "2026-11-05T02:51:14.024Z",
+  "updatedAt": "2026-11-05T02:51:14.024Z"
 }
