@@ -1,0 +1,702 @@
+{
+  "id": "wf-ba0386",
+  "name": "自动小红书评论",
+  "drawflow": {
+    "nodes": [
+      {
+        "data": {
+          "activeInInput": false,
+          "blockId": "trigger",
+          "contextMenuName": "",
+          "contextTypes": [],
+          "date": "",
+          "days": [],
+          "delay": 5,
+          "description": "",
+          "disableBlock": false,
+          "interval": 60,
+          "isUrlRegex": false,
+          "observeElement": {
+            "baseElOptions": {
+              "attributeFilter": [],
+              "attributes": false,
+              "characterData": false,
+              "childList": true,
+              "subtree": false
+            },
+            "baseSelector": "",
+            "matchPattern": "",
+            "selector": "",
+            "targetOptions": {
+              "attributeFilter": [],
+              "attributes": false,
+              "characterData": false,
+              "childList": true,
+              "subtree": false
+            }
+          },
+          "parameters": [],
+          "preferParamsInTab": false,
+          "shortcut": "",
+          "time": "00:00",
+          "type": "manual",
+          "url": ""
+        },
+        "id": "mw1ujohb-ohr0ri3l",
+        "label": "Trigger",
+        "position": {
+          "x": 0,
+          "y": -455
+        }
+      },
+      {
+        "data": {
+          "active": true,
+          "blockId": "new-tab",
+          "customUserAgent": false,
+          "description": "",
+          "disableBlock": false,
+          "inGroup": false,
+          "tabZoom": 1,
+          "updatePrevTab": false,
+          "url": "https://www.xiaohongshu.com/explore?channel_id=homefeed_recommend",
+          "userAgent": "",
+          "waitTabLoaded": true
+        },
+        "id": "mw1umjs2-l1moata5",
+        "label": "New tab",
+        "position": {
+          "x": 270,
+          "y": -455.5
+        }
+      },
+      {
+        "data": {
+          "blockId": "javascript-code",
+          "code": "const keywords = [\n  'AI工具', 'AI神器', 'AI效率工具', 'AI搜索', 'AI做PPT', 'AI办公', 'AI视频', 'AI搞钱', 'Claude Code', 'AI数据分析', 'AI编程', 'AI自动化', 'AI去水印', '打工人AI', 'AI设计', 'AI绘画', 'Obsidian', 'AI知识库', 'DeepSeek', 'nano banana', 'AI漫画', 'AI数字人', 'AI提示词', 'AI工作流', 'AI简历', '飞书多维表', 'AI写作', 'AI副业', 'AI短剧制作教程', 'AI软件哪个好用', 'ai短剧推荐', 'ai短剧制作教程', 'ai工具排行榜', 'ai软件', 'ai变现', 'ai生成视频', 'ai赛道', 'ai工具哪个好用', 'ai软件哪个最好用', 'ai聚合平台', '所有ai工具汇总', '适合办公用的ai', 'ai实用工具', 'ai提示词大全合集', 'ai提示词生成器', '优秀ai生图提示词', 'ai提示词模版库', 'ai提示词使用技巧', 'ai做图软件', 'NovelAI绘画教程', 'Midjourney绘图教程', 'ai创作绘画', 'ai绘画美人', 'ai角色设计', 'ai变现渠道', 'ai在线接单', 'ai时代小众暴利行业', '目前ai最容易变现的赛道', 'AI Agent', 'AI Agent框架', '智能体', '智能体开发', '浏览器自动化', '网页自动化', '浏览器扩展开发', '工作流编排', '自动化工具', '低代码自动化', 'RPA', 'Vibe Coding', 'Cursor', 'Playwright', 'Selenium', 'Puppeteer', '生成式AI', '大语言模型', 'LLM', '多模态AI', '代码生成', 'AI代码助手', '自然语言编程', 'ChatGPT', 'Claude', 'AI应用开发'\n];\nconst keyword = keywords[Math.floor(Math.random() * keywords.length)];\nconsole.log('随机生成并填写小红书搜索关键词:', keyword);\nautomaSetVariable('keyword', keyword)",
+          "context": "page",
+          "description": "",
+          "disableBlock": false,
+          "everyNewTab": false,
+          "label": "随机生成并填写小红书搜索关键词",
+          "preloadScripts": [],
+          "runBeforeLoad": false,
+          "timeout": 5000
+        },
+        "id": "mw1upb58-vxlyrtpz",
+        "label": "JavaScript code",
+        "position": {
+          "x": 600,
+          "y": -455
+        }
+      },
+      {
+        "data": {
+          "action": "press-key",
+          "blockId": "press-key",
+          "description": "",
+          "disableBlock": false,
+          "keys": "Enter",
+          "keysToPress": "",
+          "label": "提交小红书搜索",
+          "pressTime": "0",
+          "selector": "#search-input-in-feeds"
+        },
+        "id": "mw1upb58-ehoaen8y",
+        "label": "Press key",
+        "position": {
+          "x": 270,
+          "y": -312.5
+        }
+      },
+      {
+        "data": {
+          "assignVariable": false,
+          "blockId": "forms",
+          "clearValue": true,
+          "dataColumn": "",
+          "delay": 0,
+          "description": "",
+          "disableBlock": false,
+          "events": [],
+          "findBy": "cssSelector",
+          "generated": true,
+          "getValue": false,
+          "markEl": false,
+          "multiple": false,
+          "optionPosition": "1",
+          "saveData": false,
+          "selectOptionBy": "value",
+          "selected": true,
+          "selector": "#search-input-in-feeds",
+          "type": "text-field",
+          "value": "{{keyword}}",
+          "variableName": "",
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000
+        },
+        "id": "mw1uzu7i-xhxxxgxf",
+        "label": "Forms",
+        "position": {
+          "x": 0,
+          "y": -312.5
+        }
+      },
+      {
+        "data": {
+          "blockId": "event-click",
+          "description": "",
+          "disableBlock": false,
+          "findBy": "cssSelector",
+          "markEl": false,
+          "multiple": false,
+          "selector": "div.filters:nth-of-type(3) > div.tag-container > div.tags:nth-of-type(5)",
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000
+        },
+        "id": "mw1y4lwe-mj423auk",
+        "label": "Click element",
+        "position": {
+          "x": 270,
+          "y": -169.5
+        }
+      },
+      {
+        "data": {
+          "blockId": "event-click",
+          "description": "",
+          "disableBlock": false,
+          "findBy": "cssSelector",
+          "markEl": false,
+          "multiple": false,
+          "selector": "div.filter.active",
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000
+        },
+        "id": "mw20hpds-ajofpak6",
+        "label": "Click element",
+        "position": {
+          "x": 600,
+          "y": -169.5
+        }
+      },
+      {
+        "data": {
+          "blockId": "hover-element",
+          "description": "",
+          "disableBlock": false,
+          "findBy": "cssSelector",
+          "markEl": false,
+          "multiple": false,
+          "selector": "div.filter",
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000
+        },
+        "id": "mw20j1aq-odlvkevj",
+        "label": "Hover element",
+        "position": {
+          "x": 540,
+          "y": -312.5
+        }
+      },
+      {
+        "data": {
+          "blockId": "event-click",
+          "description": "",
+          "disableBlock": false,
+          "findBy": "cssSelector",
+          "markEl": false,
+          "multiple": false,
+          "selector": "div.filter",
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000
+        },
+        "id": "mw20mu5f-dysnn5kf",
+        "label": "Click element",
+        "position": {
+          "x": 0,
+          "y": -169.5
+        }
+      },
+      {
+        "data": {
+          "actOnPage": false,
+          "blockId": "ai-agent",
+          "description": "",
+          "disableBlock": false,
+          "disabledTools": [
+            "tab_switch",
+            "tab_new",
+            "open_url",
+            "run_plan",
+            "get_my_profile",
+            "list_secrets",
+            "get_secret",
+            "load_tools",
+            "use_skill"
+          ],
+          "enabledSkills": [],
+          "findBy": "cssSelector",
+          "maxToolRounds": 50,
+          "prompt": "你在小红书评论区扮演一个真实、有好奇心的普通网友，不是客服也不是营销号。请根据这条笔记的内容：'{{detail}}'，写一条评论，目的是推广我的项目。\n\n写作要求：\n1. 先具体回应笔记内容：挑一个你真正好奇的点提个小问题，或者就其中某个细节真诚地肯定、共鸣一下。必须提到笔记里的具体信息，不要空泛地夸“写得好”“学到了”。\n4. **重要**，回应完必须再用一句很自然的话带出我的项目，不要硬广、不要念广告词：我自己也开源了一个浏览器智能助手插件，个人免费，可以全自动操作浏览器，用工作流做爬虫、定时批量发邮件、自动生成并发布小红书，网页上能做的任务基本都能干，GitHub 搜 dcc123456/browser-copilot，觉得有用欢迎点个 star。文案可以按评论语境改写得更口语，但“开源”“个人免费”“GitHub 搜 dcc123456/browser-copilot”“欢迎 star”这几个信息必须保留。\n2. 说话要口语化，像随手打出来的一条评论：句子短一点，可以用“哈哈”“诶”“话说”“这个我也踩过坑”这类词，允许有点小跳跃，不要排比、不要总分总、不要面面俱到，长度控制在 2～4 句，可带 1～2 个 emoji。\n3. 坚决去掉 AI 味：不要出现“首先/其次/最后”“总的来说”“值得一提的是”“希望对你有所帮助”“作为AI”“以下是”这类词，不要分点，不要加粗，不要每句都工整对仗。\n\n5. 只输出评论正文本身，不要标题、不要引号、不要“评论：”前缀，也不要任何解释。",
+          "selector": "",
+          "useSnapshot": true,
+          "variableName": "comment"
+        },
+        "id": "mw20rg7u-chl0te31",
+        "label": "AI agent",
+        "position": {
+          "x": 0,
+          "y": 260
+        }
+      },
+      {
+        "data": {
+          "blockId": "javascript-code",
+          "code": "const topLikedNoteSelectors = (() => {\n  const container = document.querySelector('div.feeds-container') || document.body;\n\n  // “1.2万” / “3456” / “1w” -> 数字\n  const parseCount = (text) => {\n    if (!text) return 0;\n    const m = String(text).replace(/\\s+/g, '').match(/([\\d.]+)(万|w|W|k|K)?/);\n    if (!m) return 0;\n    const n = parseFloat(m[1]);\n    if (isNaN(n)) return 0;\n    const unit = m[2];\n    if (unit === '万' || unit === 'w' || unit === 'W') return Math.round(n * 10000);\n    if (unit === 'k' || unit === 'K') return Math.round(n * 1000);\n    return Math.round(n);\n  };\n\n  // 每条笔记记录：唯一 id（来自 /explore/<id> 链接）+ 标题 + 点赞数\n  const notes = Array.from(container.querySelectorAll('section.note-item')).map((card) => {\n    const link = card.querySelector('a[href*=\"/explore/\"]');\n    const href = link ? link.getAttribute('href') : '';\n    const idMatch = href.match(/\\/explore\\/([0-9a-zA-Z]+)/);\n    const titleEl = card.querySelector('.footer .title span') || card.querySelector('.title span') || card.querySelector('a.title');\n    return {\n      noteId: idMatch ? idMatch[1] : '',\n      title: titleEl ? titleEl.textContent.trim() : '',\n      likes: parseCount((card.querySelector('.like-wrapper .count') || card.querySelector('.count') || {}).textContent),\n    };\n  }).filter((n) => n.noteId);\n\n  // 按点赞数降序，取前 10 条\n  notes.sort((a, b) => b.likes - a.likes);\n\n  // 用笔记唯一 id 定位卡片，不再用 nth-child 位置：滚动 / 懒加载 / 重排都不会指向别的笔记\n  const topLikedNoteSelectors = notes.slice(0, 3).map((n) => `section.note-item:has(a[href*=\"${n.noteId}\"])`);\n  automaSetVariable('topLikedNoteSelectors', topLikedNoteSelectors)  \n  return topLikedNoteSelectors\n})();",
+          "context": "page",
+          "description": "",
+          "disableBlock": false,
+          "everyNewTab": false,
+          "label": "按笔记唯一标识生成点赞最高笔记的选择器数组",
+          "preloadScripts": [],
+          "runBeforeLoad": false,
+          "timeout": 5000
+        },
+        "id": "mw21ii4r-a8ev25q1",
+        "label": "JavaScript code",
+        "position": {
+          "x": 0,
+          "y": -26
+        }
+      },
+      {
+        "data": {
+          "blockId": "loop-data",
+          "description": "",
+          "disableBlock": false,
+          "elementSelector": "",
+          "fromNumber": 1,
+          "loopData": "[]",
+          "loopId": "xps1r9u92b",
+          "loopThrough": "variable",
+          "maxLoop": 0,
+          "referenceKey": "",
+          "resumeLastWorkflow": false,
+          "reverseLoop": false,
+          "startIndex": 0,
+          "toNumber": 10,
+          "variableName": "topLikedNoteSelectors",
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000
+        },
+        "id": "mw21xib8-pnt8trp0",
+        "label": "Loop data",
+        "position": {
+          "x": 270,
+          "y": -26
+        }
+      },
+      {
+        "data": {
+          "blockId": "event-click",
+          "description": "",
+          "disableBlock": false,
+          "findBy": "cssSelector",
+          "markEl": false,
+          "multiple": false,
+          "onError": {
+            "enable": true,
+            "toDo": "continue"
+          },
+          "selector": "{{loopItem}} > div > a",
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000
+        },
+        "id": "mw29sphx-vbq06fdr",
+        "label": "Click element",
+        "position": {
+          "x": 540,
+          "y": -26.5
+        }
+      },
+      {
+        "data": {
+          "blockId": "delay",
+          "description": "",
+          "disableBlock": false,
+          "time": 500
+        },
+        "id": "mw2v2fd2-8xx10c8r",
+        "label": "Delay",
+        "position": {
+          "x": 0,
+          "y": 117
+        }
+      },
+      {
+        "data": {
+          "blockId": "event-click",
+          "description": "",
+          "disableBlock": false,
+          "findBy": "cssSelector",
+          "markEl": false,
+          "multiple": false,
+          "selector": "div.inner > span",
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000
+        },
+        "id": "mw2v4li4-hntozj3p",
+        "label": "Click element",
+        "position": {
+          "x": 540,
+          "y": 116.5
+        }
+      },
+      {
+        "data": {
+          "blockId": "event-click",
+          "description": "",
+          "disableBlock": false,
+          "findBy": "cssSelector",
+          "markEl": false,
+          "multiple": false,
+          "onError": {
+            "enable": true,
+            "toDo": "continue"
+          },
+          "selector": "button.btn.submit",
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000
+        },
+        "id": "mw2v7n39-1ug8pt2f",
+        "label": "Click element",
+        "position": {
+          "x": 540,
+          "y": 259.5
+        }
+      },
+      {
+        "data": {
+          "blockId": "delay",
+          "description": "",
+          "disableBlock": false,
+          "time": "1500"
+        },
+        "id": "mw2v8kgd-ymbtf03x",
+        "label": "Delay",
+        "position": {
+          "x": 0,
+          "y": 403
+        }
+      },
+      {
+        "data": {
+          "blockId": "event-click",
+          "description": "",
+          "disableBlock": false,
+          "findBy": "cssSelector",
+          "markEl": false,
+          "multiple": false,
+          "onError": {
+            "enable": true,
+            "toDo": "continue"
+          },
+          "selector": "div.close.close-mask-dark",
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000
+        },
+        "id": "mw2v8sv3-j1qvdzda",
+        "label": "Click element",
+        "position": {
+          "x": 270,
+          "y": 402.5
+        }
+      },
+      {
+        "data": {
+          "blockId": "delay",
+          "description": "",
+          "disableBlock": false,
+          "time": "3500"
+        },
+        "id": "mw2v9btf-1s30dh3c",
+        "label": "Delay",
+        "position": {
+          "x": 581.6358111722219,
+          "y": 402.5846142897502
+        }
+      },
+      {
+        "data": {
+          "addExtraRow": false,
+          "assignVariable": true,
+          "blockId": "get-text",
+          "dataColumn": "",
+          "description": "",
+          "disableBlock": false,
+          "extraRowDataColumn": "",
+          "extraRowValue": "",
+          "findBy": "cssSelector",
+          "includeTags": false,
+          "markEl": false,
+          "multiple": false,
+          "onError": {
+            "enable": true,
+            "toDo": "continue"
+          },
+          "prefixText": "",
+          "regex": "",
+          "regexExp": [],
+          "saveData": false,
+          "selector": "#detail-desc",
+          "suffixText": "",
+          "useTextContent": true,
+          "variableName": "detail",
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000
+        },
+        "id": "mw2xiqj1-1co0xwll",
+        "label": "Get text",
+        "position": {
+          "x": 289.9218198520956,
+          "y": 113.46735879882439
+        }
+      },
+      {
+        "data": {
+          "assignVariable": false,
+          "blockId": "forms",
+          "clearValue": true,
+          "dataColumn": "",
+          "delay": 0,
+          "description": "",
+          "disableBlock": false,
+          "events": [],
+          "findBy": "cssSelector",
+          "getValue": false,
+          "markEl": false,
+          "multiple": false,
+          "onError": {
+            "enable": true,
+            "toDo": "continue"
+          },
+          "optionPosition": "1",
+          "saveData": false,
+          "selectOptionBy": "value",
+          "selected": true,
+          "selector": "#content-textarea",
+          "type": "text-field",
+          "value": "{{comment}}",
+          "variableName": "",
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000
+        },
+        "id": "mw3d8gts-vrzc4olu",
+        "label": "Forms",
+        "position": {
+          "x": 270,
+          "y": 259.5
+        }
+      },
+      {
+        "data": {
+          "activeTab": true,
+          "allWindows": false,
+          "blockId": "close-tab",
+          "closeType": "tab",
+          "description": "",
+          "disableBlock": false,
+          "url": ""
+        },
+        "id": "mw5ojlw7-izh8d2xq",
+        "label": "Close tab/window",
+        "position": {
+          "x": 998.0566529757699,
+          "y": 461.48162965817704
+        }
+      },
+      {
+        "data": {
+          "blockId": "loop-breakpoint",
+          "clearLoop": false,
+          "description": "",
+          "disableBlock": false,
+          "loopId": ""
+        },
+        "id": "mw5op9gv-vi3jz34g",
+        "label": "Loop breakpoint",
+        "position": {
+          "x": 652.7953579103116,
+          "y": 560.6137833182314
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "mw1umw95-8b4uwkp1",
+        "source": "mw1ujohb-ohr0ri3l",
+        "sourceHandle": "trigger-output-1",
+        "target": "mw1umjs2-l1moata5",
+        "targetHandle": "new-tab-input-1"
+      },
+      {
+        "id": "mw1upb58-meucx69i",
+        "source": "mw1umjs2-l1moata5",
+        "sourceHandle": "new-tab-output-1",
+        "target": "mw1upb58-vxlyrtpz",
+        "targetHandle": "javascript-code-input-1"
+      },
+      {
+        "id": "mw1v020s-8lp5pjo8",
+        "source": "mw1upb58-vxlyrtpz",
+        "sourceHandle": "javascript-code-output-1",
+        "target": "mw1uzu7i-xhxxxgxf",
+        "targetHandle": "forms-input-1"
+      },
+      {
+        "id": "mw1v04bm-ehquidi8",
+        "source": "mw1uzu7i-xhxxxgxf",
+        "sourceHandle": "forms-output-1",
+        "target": "mw1upb58-ehoaen8y",
+        "targetHandle": "press-key-input-1"
+      },
+      {
+        "id": "mw20hrpx-e25s7i6d",
+        "source": "mw1y4lwe-mj423auk",
+        "sourceHandle": "event-click-output-1",
+        "target": "mw20hpds-ajofpak6",
+        "targetHandle": "event-click-input-1"
+      },
+      {
+        "id": "mw20jayn-1ldlco4b",
+        "source": "mw1upb58-ehoaen8y",
+        "sourceHandle": "press-key-output-1",
+        "target": "mw20j1aq-odlvkevj",
+        "targetHandle": "hover-element-input-1"
+      },
+      {
+        "id": "mw20n19v-ay7c5qv3",
+        "source": "mw20j1aq-odlvkevj",
+        "sourceHandle": "hover-element-output-1",
+        "target": "mw20mu5f-dysnn5kf",
+        "targetHandle": "event-click-input-1"
+      },
+      {
+        "id": "mw20n7or-g2fg08sr",
+        "source": "mw20mu5f-dysnn5kf",
+        "sourceHandle": "event-click-output-1",
+        "target": "mw1y4lwe-mj423auk",
+        "targetHandle": "event-click-input-1"
+      },
+      {
+        "id": "mw21kgdg-0giml1ud",
+        "source": "mw20hpds-ajofpak6",
+        "sourceHandle": "event-click-output-1",
+        "target": "mw21ii4r-a8ev25q1",
+        "targetHandle": "javascript-code-input-1"
+      },
+      {
+        "id": "mw21xoi7-sg4qzhxf",
+        "source": "mw21ii4r-a8ev25q1",
+        "sourceHandle": "javascript-code-output-1",
+        "target": "mw21xib8-pnt8trp0",
+        "targetHandle": "loop-data-input-1"
+      },
+      {
+        "id": "mw2v8nba-cw4w5s7x",
+        "source": "mw2v7n39-1ug8pt2f",
+        "sourceHandle": "event-click-output-1",
+        "target": "mw2v8kgd-ymbtf03x",
+        "targetHandle": "delay-input-1"
+      },
+      {
+        "id": "mw2v8wf9-mxwkuufv",
+        "source": "mw2v8kgd-ymbtf03x",
+        "sourceHandle": "delay-output-1",
+        "target": "mw2v8sv3-j1qvdzda",
+        "targetHandle": "event-click-input-1"
+      },
+      {
+        "id": "mw2v9egh-gmf6q7if",
+        "source": "mw2v8sv3-j1qvdzda",
+        "sourceHandle": "event-click-output-1",
+        "target": "mw2v9btf-1s30dh3c",
+        "targetHandle": "delay-input-1"
+      },
+      {
+        "id": "mw2xao07-753tww6y",
+        "source": "mw21xib8-pnt8trp0",
+        "sourceHandle": "loop-data-output-1",
+        "target": "mw29sphx-vbq06fdr",
+        "targetHandle": "event-click-input-1"
+      },
+      {
+        "id": "mw2xixbz-b1q0yy3t",
+        "source": "mw2v2fd2-8xx10c8r",
+        "sourceHandle": "delay-output-1",
+        "target": "mw2xiqj1-1co0xwll",
+        "targetHandle": "get-text-input-1"
+      },
+      {
+        "id": "mw2xj06a-a83ycqwe",
+        "source": "mw2xiqj1-1co0xwll",
+        "sourceHandle": "get-text-output-1",
+        "target": "mw2v4li4-hntozj3p",
+        "targetHandle": "event-click-input-1"
+      },
+      {
+        "id": "mw3d8wtn-uv642gkj",
+        "source": "mw3d8gts-vrzc4olu",
+        "sourceHandle": "forms-output-1",
+        "target": "mw2v7n39-1ug8pt2f",
+        "targetHandle": "event-click-input-1"
+      },
+      {
+        "id": "mw3dywmp-vox0rrm9",
+        "source": "mw29sphx-vbq06fdr",
+        "sourceHandle": "event-click-output-1",
+        "target": "mw2v2fd2-8xx10c8r",
+        "targetHandle": "delay-input-1"
+      },
+      {
+        "id": "mw5opjfc-af7fy7mm",
+        "source": "mw2v9btf-1s30dh3c",
+        "sourceHandle": "delay-output-1",
+        "target": "mw5op9gv-vi3jz34g",
+        "targetHandle": "loop-breakpoint-input-1"
+      },
+      {
+        "id": "mw5opopg-k5kv33le",
+        "source": "mw5op9gv-vi3jz34g",
+        "sourceHandle": "loop-breakpoint-output-1",
+        "target": "mw5ojlw7-izh8d2xq",
+        "targetHandle": "close-tab-input-1"
+      },
+      {
+        "id": "mw2v5ga3-1hp0p7cf",
+        "source": "mw2v4li4-hntozj3p",
+        "sourceHandle": "event-click-output-1",
+        "target": "mw20rg7u-chl0te31",
+        "targetHandle": "ai-agent-input-1"
+      },
+      {
+        "id": "mw3d8u9e-fslxl9tl",
+        "source": "mw20rg7u-chl0te31",
+        "sourceHandle": "ai-agent-output-1",
+        "target": "mw3d8gts-vrzc4olu",
+        "targetHandle": "forms-input-1"
+      }
+    ]
+  },
+  "trigger": {
+    "type": "manual",
+    "enabled": false
+  },
+  "settings": {
+    "saveLog": false,
+    "debugMode": false,
+    "notification": false,
+    "reuseLastState": false
+  }
+}
